@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Packages - Tharunam</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background: #FFEBEE; color: #333; overflow-x: hidden; }
+
+        /* NAVBAR - Perfectly matched to index.html */
+        .navbar {
+            background: #8d0809; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px 0 0;
+            height: 80px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 100%;
+            width: 450px; 
+            display: flex;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            margin-right: 50px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover { background: white; color: #8d0809; }
+
+        /* MAIN CONTENT */
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        h1 { color: #8d0809; margin-bottom: 40px; font-size: 2.5rem; }
+
+        /* 2x2 GRID */
+        .package-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .category-box {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category-box:hover { transform: translateY(-10px); }
+
+        .category-box img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .category-info { padding: 25px; text-align: center; }
+        .category-info h2 { font-size: 1.6rem; margin-bottom: 10px; }
+        
+        /* Tier Colors */
+        .silver h2 { color: #757575; }
+        .gold h2 { color: #D4AF37; }
+        .platinum h2 { color: #506266; }
+        .diamond h2 { color: #00ACC1; }
+
+        .book-now {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: #8d0809;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { height: auto; flex-direction: column; padding: 10px 0; }
+            .logo { width: 100%; height: 60px; }
+            .nav-links { margin-right: 0; margin-top: 10px; }
+            .package-grid { grid-template-columns: 1fr; }
+        }
+        .category-info p {
+    font-size: 1.4rem;  /* Increases the size (default is usually 1rem) */
+    font-weight: 600;   /* Makes it slightly bolder/clearer */
+    color: #444;        /* Sets a sharp, professional color */
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="index.html" style="width: 100%; height: 100%;">
+            <img src="images/final logo.png" alt="Tharunam Logo">
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">← Back to Home</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Wedding Packages</h1>
+    
+    <div class="package-grid">
+        <div class="category-box silver">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80" alt="Silver Wedding">
+            <div class="category-info">
+                <h2>Silver Package</h2>
+                <p>Traditional Mandap decor, essential lighting, and traditional Nadaswaram setup.</p>
+                <a href="birthday-details.html" class="book-now">Book Now</a>
+            </div>
+        </div>
+
+        <div class="category-box gold">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Gold Wedding">
+            <div class="category-info">
+                <h2>Gold Package</h2>
+                <p>Designer stage decor, professional photography, and full guest catering setup.</p>
+                <a href="birthday-details.html" class="book-now">Book Now</a>
+            </div>
+        </div>
+
+        <div class="category-box platinum">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Platinum Wedding">
+            <div class="category-info">
+                <h2>Platinum Package</h2>
+                <p>Luxury theme decor, cinematic videography, LED backdrop, and premium buffet.</p>
+                <a href="birthday-details.html" class="book-now">Book Now</a>
+            </div>
+        </div>
+
+        <div class="category-box diamond">
+            <img src="https://i.pinimg.com/736x/36/bf/6b/36bf6bb0b883db1851be2b577e99daa5.jpg" alt="Diamond Wedding">
+            <div class="category-info">
+                <h2>Diamond Package</h2>
+                <p>End-to-end destination wedding planning, celebrity performance, and 5-star catering.</p>
+                <a href="birthday-details.html" class="book-now">Book Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="background: #8d0809; color: white; text-align: center; padding: 20px; margin-top: 50px;">
+    © 2026 Tharunam Events. All Rights Reserved.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tharunam - Event Planners</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;}
+
+html{scroll-behavior:smooth;}
+
+body{
+line-height:1.6;
+background:#FFEBEE;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#8d0809;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 50px 0 0;
+height:80px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+height:100%;
+width:450px;
+display:flex;
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:fill;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+list-style:none;
+gap:30px;
+}
+
+.nav-links li{
+position:relative;
+color:white;
+font-weight:500;
+cursor:pointer;
+}
+
+.nav-links li a{
+color:white;
+text-decoration:none;
+}
+
+/* DROPDOWN */
+
+.dropdown-panel{
+position:absolute;
+top:100%;
+left:50%;
+transform:translateX(-50%);
+background:white;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+padding:15px;
+display:none;
+z-index:1001;
+color:#333;
+min-width:220px;
+white-space:nowrap;
+}
+
+#contactMenu .dropdown-panel{
+left:auto;
+right:0;
+transform:none;
+}
+
+.active .dropdown-panel{
+display:block;
+animation:slideIn 0.3s ease;
+}
+
+.dropdown-panel ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.dropdown-panel li{
+color:#333;
+padding:5px 0;
+}
+
+@keyframes slideIn{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* HERO */
+
+.hero{
+height:450px;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=80')
+no-repeat center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+/* EVENTS */
+
+.packages-section{
+padding:80px 50px 60px;
+text-align:center;
+}
+
+.package-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.package-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.package-card:hover{
+transform:translateY(-10px);
+}
+
+.package-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.package-content{
+padding:20px;
+}
+
+.price{
+color:#8d0809;
+font-weight:bold;
+font-size:1.1rem;
+margin:10px 0;
+}
+
+.package-card button{
+padding:10px 30px;
+background:#8d0809;
+color:white;
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-weight:600;
+margin-top:10px;
+}
+
+.package-card button:hover{
+background:#b10a0b;
+}
+
+/* ENQUIRY */
+
+.enquiry{
+background:#f9f9f9;
+padding:60px 20px;
+text-align:center;
+}
+
+form{
+max-width:600px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:15px;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
+}
+
+form button{
+background:#8d0809;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:25px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#8d0809;
+color:white;
+text-align:center;
+padding:20px;
+}
+/* INTRO SCREEN */
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:linear-gradient(135deg,#fff5f5,#fecaca,#fca5a5);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+transition:opacity 1s ease;
+}
+
+.intro-content{
+text-align:center;
+color:#7f1d1d;
+}
+
+.intro-logo{
+width:240px;
+animation:logoAnim 2s ease;
+}
+
+.intro-content h1{
+font-size:70px;
+letter-spacing:8px;
+margin-top:20px;
+animation:textFade 2s ease;
+}
+
+.intro-content p{
+font-size:22px;
+margin-top:10px;
+letter-spacing:3px;
+}
+
+.intro-services{
+margin-top:25px;
+font-size:18px;
+color:#991b1b;
+}
+
+@keyframes logoAnim{
+0%{opacity:0;transform:scale(0.7);}
+100%{opacity:1;transform:scale(1);}
+}
+
+@keyframes textFade{
+0%{opacity:0;transform:translateY(20px);}
+100%{opacity:1;transform:translateY(0);}
+}
+/* PHOTO GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* FULL SCREEN POPUP */
+
+#imagePopup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#imagePopup img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+#closePopup{
+position:absolute;
+top:30px;
+right:40px;
+font-size:35px;
+color:white;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+
+<div id="intro">
+
+<div class="intro-content">
+
+<img src="images/final logo.png" class="intro-logo">
+
+<h1>THARUNAM</h1>
+
+<p>Plan Moments With Us</p>
+
+<div class="intro-services">
+Wedding Planning • Birthday Events • Corporate Events • Anniversary Celebrations
+</div>
+
+</div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="images/final logo.png">
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li id="locationMenu">
+Location ▾
+<div class="dropdown-panel">
+<ul>
+<li>📍Chennai</li>
+<li>📍Coimbatore</li>
+<li>📍Erode</li>
+<li>📍Pollachi</li>
+<li>📍Madurai</li>
+<li>📍Trichy</li>
+<li>📍Salem</li>
+<li>📍Pondicherry</li>
+<li>📍Tirunelveli</li>
+<li>📍Tiruppur</li>
+</ul>
+</div>
+</li>
+
+<li id="contactMenu">
+Contact ▾
+<div class="dropdown-panel">
+<p>📞 +91 8778318394</p>
+<p>📧 tharunum2026@gmail.com</p>
+</div>
+</li>
+
+</ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+<div>
+<h2 style="font-size:2.5rem;">Make Moments Unforgettable</h2>
+<p>Expert planning for your special occasions</p>
+</div>
+</section>
+
+<!-- EVENTS -->
+
+<section class="packages-section">
+
+<h2>Our Premium Category</h2>
+
+<div class="package-grid">
+    <div class="package-card">
+<img src="https://i.pinimg.com/736x/9d/bd/7a/9dbd7a7d0e94d76d32d010789d70158e.jpg">
+<div class="package-content">
+<h3>Birthday Celebration</h3>
+<p>Creative decorations, cake setup and fun activities.</p>
+<div class="price">₹2500 onwards</div>
+<button onclick="window.location.href='birthday.html'">View</button>
+</div>
+</div>
+    <div class="package-card">
+<img src="pubertyimg/puberty diamond.png">
+<div class="package-content">
+<h3>Puberty Ceremony</h3>
+<p>Traditional celebration marking the transition to womanhood.</p>
+<div class="price">₹7000 onwards</div>
+<button onclick="window.location.href='pubertyceremony.html'">View</button>
+</div>
+</div>
+
+<div class="package-card">
+<img src="https://i.pinimg.com/736x/36/bf/6b/36bf6bb0b883db1851be2b577e99daa5.jpg">
+<div class="package-content">
+<h3>Marriage Ceremony</h3>
+<p>Complete wedding planning with décor and rituals.</p>
+<div class="price">₹95000 onwards</div>
+<button onclick="window.location.href='marriage.html'">View</button>
+</div>
+</div>
+
+<div class="package-card">
+<img src="https://i.pinimg.com/736x/a5/bd/a6/a5bda63007b9d23284c59accaf49aba2.jpg">
+<div class="package-content">
+<h3>Corporate Events</h3>
+<p>Professional planning and execution.</p>
+<div class="price">₹15000 onwards</div>
+<button onclick="window.location.href='corporate.html'">View</button>
+</div>
+</div>
+
+</div>
+
+<!-- FEATURED EVENTS -->
+
+<h2 style="margin-top:70px;">Featured Events</h2>
+
+<div class="package-grid">
+
+
+<div class="package-card">
+<img src="epimage/babyelite.png">
+<div class="package-content">
+<h3>Baby Shower</h3>
+<p>Elegant celebration welcoming the new arrival.</p>
+<div class="price">₹5000 onwards</div>
+<button onclick="window.location.href='bsep1.html'">View</button>
+</div>
+</div>
+
+<div class="package-card">
+<img src="epimage/firstfeed.png">
+<div class="package-content">
+<h3>Annaprassana</h3>
+<p>Traditional first-feeding ceremony for your baby.</p>
+<div class="price">₹5000 onwards</div>
+<button onclick="window.location.href='bsep2.html'">View</button>
+</div>
+</div>
+
+<div class="package-card">
+<img src="epimage/cc.png">
+<div class="package-content">
+<h3>Cradle Ceremony</h3>
+<p>Beautiful naming and cradle ceremony celebrations.</p>
+<div class="price">₹5000 onwards</div>
+<button onclick="window.location.href='bsep3.html'">View</button>
+</div>
+</div>
+
+<div class="package-card">
+<img src="epimage/ear piercing.jpg">
+<div class="package-content">
+<h3>Ear Piercing</h3>
+<p>Traditional ear piercing ceremony arrangements.</p>
+<div class="price">₹5000 onwards</div>
+<button onclick="window.location.href='bsep4.html'">View</button>
+</div>
+</div>
+
+<div class="package-card">
+<img src="https://i.pinimg.com/736x/a5/bd/a6/a5bda63007b9d23284c59accaf49aba2.jpg">
+<div class="package-content">
+<h3>Farewell Party</h3>
+<p>Memorable send-off celebrations with themed décor.</p>
+<div class="price">₹15000 onwards</div>
+<button onclick="window.location.href='farewell.html'">View</button>
+</div>
+</div>
+
+<div class="package-card">
+<img src="https://i.pinimg.com/736x/a5/bd/a6/a5bda63007b9d23284c59accaf49aba2.jpg">
+<div class="package-content">
+<h3>Anniversary Party</h3>
+<p>Celebrate years of love with elegant planning.</p>
+<div class="price">₹15000 onwards</div>
+<button onclick="window.location.href='anniversary.html'">View</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ENQUIRY -->
+
+<section class="enquiry">
+
+<h2>Book Your Event</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<input type="date" name="date" required>
+
+<input type="text" name="location" placeholder="Location">
+
+<textarea name="event_details" rows="4" placeholder="Event Details"></textarea>
+
+<button type="submit">SEND ENQUIRY</button>
+
+</form>
+
+</section>
+
+<footer>
+© 2026 Tharunam Events. All Rights Reserved.
+</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+/* DROPDOWN MENU */
+
+const menus=document.querySelectorAll('#locationMenu,#contactMenu');
+
+menus.forEach(menu=>{
+menu.onclick=function(e){
+e.stopPropagation();
+menus.forEach(m=>{if(m!==menu)m.classList.remove('active');});
+this.classList.toggle('active');
+};
+});
+
+document.onclick=function(){
+menus.forEach(m=>m.classList.remove('active'));
+};
+
+
+/* INTRO OVERLAY SHOW ONLY ONCE */
+
+const intro = document.getElementById("intro");
+
+if(!sessionStorage.getItem("introPlayed")){
+
+sessionStorage.setItem("introPlayed","true");
+
+setTimeout(function(){
+
+intro.style.opacity="0";
+
+setTimeout(function(){
+intro.style.display="none";
+},1000);
+
+},4000);
+
+}else{
+
+intro.style.display="none";
+
+}
+
+});
+
+</script>
+</script>
+
+</body>
+</html>

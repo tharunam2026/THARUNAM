@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Silver Puberty Ceremony - Tharunam</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#fffcf2;
+color:#333;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:6px 18px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+/* HERO */
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.package-title h1{
+color:#8d0809;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.5rem;
+color:#d42427;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+/* CONTENT */
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:28px;
+cursor:pointer;
+color:#8d0809;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:15px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+width:100%;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-section{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="pubertyceremony.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+
+<section class="hero-section">
+
+<div>
+<img src="pubertyimg/puberty silver.jpg" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>Puberty Ceremony - Silver</h1>
+
+<p class="price-tag">₹15,000 Onwards</p>
+
+<p>Honor this traditional transition with a touch of grace. Our Silver package blends authentic South Indian customs with essential professional services for a beautiful Manjal Neerattu Vizha.</p>
+
+<p>• Traditional Floral Backdrop with Garlands</p>
+<p>• 5 Artistically Arranged Seeru Thattu</p>
+<p>• Professional Makeup & Hairstyling</p>
+<p>• HD Event Photography</p>
+<p>• Authentic Catering Service</p>
+<p>• Manjal Neerattu Ritual Essentials</p>
+
+</div>
+
+</section>
+
+
+<div class="details-container">
+
+<div class="section-box">
+
+<h2>Gallery</h2>
+
+<div class="gallery-scroll-container">
+
+<div class="gallery-item"><img src="pubertyimg/ps1.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/ps2.png"></div>
+<div class="gallery-item"><img src="pubertyimg/ps3.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/ps4.jpg"></div>
+
+</div>
+
+</div>
+
+
+<div class="section-box">
+<h2>Traditional Decor & Setting</h2>
+<p>Celebrate this milestone with a sacred floral backdrop decorated with fresh garlands and traditional motifs along with artistically arranged Seeru Thattu.</p>
+</div>
+
+
+<div class="section-box">
+<h2>Artistry & Style</h2>
+<p>Professional makeup and hairstyling ensuring the young lady looks radiant and elegant throughout the ceremony.</p>
+</div>
+
+
+<div class="section-box">
+<h2>Professional Photography</h2>
+<p>HD photography service capturing every ritual moment and joyful memory with family and friends.</p>
+</div>
+
+
+<div class="section-box">
+<h2>The Ritual Feast</h2>
+<p>Authentic South Indian catering service prepared with traditional recipes and premium ingredients.</p>
+</div>
+
+
+<div class="section-box">
+<h2>Complimentary Essentials</h2>
+<p>Customized digital invitation for sharing the event details with relatives and loved ones.</p>
+</div>
+
+
+<button class="book-btn" onclick="openModal()">BOOK NOW</button>
+
+</div>
+
+
+
+<!-- BOOKING MODAL -->
+
+<div id="bookingModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeModal()">&times;</span>
+
+<h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
+Book Silver Puberty Package
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Puberty">
+<input type="hidden" name="package_type" value="Silver">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>Location</label>
+<input type="text" name="location">
+</div>
+
+<div class="form-group">
+<label>Event Details *</label>
+<textarea name="event_details" rows="4"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
+
+
+<script>
+
+function openModal(){
+document.getElementById("bookingModal").style.display="block";
+}
+
+function closeModal(){
+document.getElementById("bookingModal").style.display="none";
+}
+
+window.onclick=function(event){
+
+let modal=document.getElementById("bookingModal");
+
+if(event.target==modal){
+modal.style.display="none";
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Packages - Tharunam</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background: #FFEBEE; color: #333; }
+
+        /* Shared Navbar Style */
+        .navbar {
+            background: #8d0809;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+        .navbar .logo-text { color: white; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+        .back-btn { color: white; text-decoration: none; font-weight: 500; border: 1px solid white; padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+        .back-btn:hover { background: white; color: #8d0809; }
+
+        /* Main Content */
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        h1 { color: #8d0809; margin-bottom: 40px; font-size: 2.5rem; }
+
+        /* 2x2 Grid Layout */
+        .package-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 in each row */
+            gap: 30px;
+        }
+
+        .category-box {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .category-box:hover { transform: translateY(-10px); }
+
+        .category-box img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .category-info {
+            padding: 20px;
+            background: white;
+        }
+
+        .category-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Unique colors for each tier */
+        .silver h2 { color: #757575; }
+        .gold h2 { color: #D4AF37; }
+        .platinum h2 { color: #506266; }
+        .diamond h2 { color: #00ACC1; }
+
+        .book-now {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 25px; /* Slightly wider padding for longer text */
+    background: #8d0809;
+    color: white;
+    border-radius: 25px; /* Rounded pill shape looks more modern */
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.book-now:hover {
+    background: #b10a0b;
+    transform: scale(1.05);
+}
+
+        /* Mobile View: Stack them vertically */
+        @media (max-width: 768px) {
+            .package-grid { grid-template-columns: 1fr; }
+            .navbar { padding: 0 20px; }
+        }
+        /* NAVBAR */
+.navbar {
+    background: #8d0809; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px 0 0; /* Keeps right padding for the links */
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO CONTAINER */
+.logo {
+    height: 100%;
+    width: 450px; /* Matches your index.html perfectly */
+    background: transparent; 
+    display: flex;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Forces logo to fill the container space */
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin-right: 50px;
+}
+
+.nav-links li a.back-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid white;
+    padding: 8px 20px;
+    border-radius: 25px;
+}
+.category-info p {
+    font-size: 1.4rem;  /* Increases the size (default is usually 1rem) */
+    font-weight: 600;   /* Makes it slightly bolder/clearer */
+    color: #444;        /* Sets a sharp, professional color */
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="index.html/birthday.html" style="display: block; width: 100%; height: 100%;">
+            <img src="images/final logo.png" alt="Tharunam Logo">
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="back-btn">← Back to Home</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Birthday Packages</h1>
+    
+    <div class="package-grid">
+       <div class="category-box silver">
+    <img src="images/birthdaysilver.png" alt="Silver Birthday">
+    <div class="category-info">
+        <h2>Silver Package</h2>
+        <p>2500 Onwards</p>
+        <a href="birthdaysilver.html" class="book-now">View Details</a>
+        </div>
+        </div>
+        <div class="category-box gold">
+            <img src="images/birthday gold.png" alt="Gold Birthday">
+            <div class="category-info">
+                <h2>Gold Package</h2>
+                <p>5000 Onwards</p>
+               <a href="birthdaygold.html" class="book-now">View Details</a>
+            </div>
+        </div>
+        <div class="category-box platinum">
+            <img src="images/birthdayplatinum.png" alt="Platinum Birthday">
+            <div class="category-info">
+                <h2>Platinum Package</h2>
+                <p>10000 Onwards</p>
+                <a href="birthdayplatinum.html" class="book-now">View Details</a>
+            </div>
+        </div>
+        <div class="category-box diamond">
+            <img src="images/birthdaydiamound.png" alt="Diamond Birthday">
+            <div class="category-info">
+                <h2>Diamond Package</h2>
+                <p>25000 Onwards</p>
+                <a href="birthdaydiamond.html" class="book-now">View Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer style="background: #8d0809; color: white; text-align: center; padding: 20px; margin-top: 50px;">
+    © 2026 Tharunam Events. All Rights Reserved.
+</footer>
+</body>
+</html>

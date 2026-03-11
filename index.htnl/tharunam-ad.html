@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tharunam Intro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#8d0809,#b91c1c,#fca5a5);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+/* LOGO */
+
+.logo{
+width:220px;
+opacity:0;
+animation:logoFade 2s ease forwards;
+}
+
+@keyframes logoFade{
+0%{opacity:0; transform:scale(0.6);}
+100%{opacity:1; transform:scale(1);}
+}
+
+/* TITLE */
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:60px;
+margin-top:20px;
+opacity:0;
+animation:titlePop 1.5s ease forwards;
+animation-delay:2s;
+}
+
+@keyframes titlePop{
+0%{opacity:0; transform:translateY(30px);}
+100%{opacity:1; transform:translateY(0);}
+}
+
+/* TAGLINE */
+
+.tagline{
+margin-top:10px;
+font-size:18px;
+opacity:0;
+animation:fadeText 1.5s forwards;
+animation-delay:3.5s;
+}
+
+@keyframes fadeText{
+to{opacity:1;}
+}
+
+/* EVENT SLIDER */
+
+.events{
+position:absolute;
+bottom:80px;
+width:80%;
+display:flex;
+gap:30px;
+justify-content:center;
+opacity:0;
+animation:showEvents 2s forwards;
+animation-delay:5s;
+}
+
+@keyframes showEvents{
+to{opacity:1;}
+}
+
+.event-card{
+width:220px;
+height:150px;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+transition:0.5s;
+}
+
+.event-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.event-card:hover{
+transform:scale(1.05);
+}
+
+/* FADE OUT BEFORE REDIRECT */
+
+.fadeout{
+animation:fadeOut 2s forwards;
+}
+
+@keyframes fadeOut{
+to{
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOGO -->
+
+<img src="images/final logo.png" class="logo">
+
+<div class="title">Tharunam</div>
+
+<div class="tagline">Plan Moments With Us</div>
+
+<!-- EVENT SHOWCASE -->
+
+<div class="events">
+
+<div class="event-card">
+<img src="https://i.pinimg.com/736x/9d/bd/7a/9dbd7a7d0e94d76d32d010789d70158e.jpg">
+</div>
+
+<div class="event-card">
+<img src="https://i.pinimg.com/736x/a5/bd/a6/a5bda63007b9d23284c59accaf49aba2.jpg">
+</div>
+
+<div class="event-card">
+<img src="https://i.pinimg.com/736x/36/bf/6b/36bf6bb0b883db1851be2b577e99daa5.jpg">
+</div>
+
+<div class="event-card">
+<img src="https://i.pinimg.com/736x/3b/aa/6d/3baa6df8c7a12b8b7a6b1d5c1e3dcd1c.jpg">
+</div>
+
+</div>
+
+<script>
+
+/* Redirect to main website */
+
+setTimeout(function(){
+
+document.body.classList.add("fadeout");
+
+},10000);
+
+setTimeout(function(){
+
+window.location.href="index.html";
+
+},12000);
+
+</script>
+
+</body>
+</html>

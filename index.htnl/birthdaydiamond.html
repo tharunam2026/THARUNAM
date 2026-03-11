@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platinum Birthday Details - Tharunam</title>
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+
+body{
+background:#fdf2f2;
+color:#333;
+line-height:1.6;
+}
+
+/* Navbar */
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:5px 15px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+/* Hero */
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.package-title h1{
+color:#506266;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.5rem;
+color:#708090;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+/* Content */
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* Gallery */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+.gallery-scroll-container::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb{
+background:#8d0809;
+border-radius:10px;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* Button */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+text-align:center;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* Modal */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+overflow-y:auto;
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:2rem;
+cursor:pointer;
+color:#8d0809;
+}
+
+/* Form */
+
+.form-group{
+margin-bottom:15px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+margin-bottom:5px;
+font-weight:bold;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+.hero-section{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="birthday.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+<section class="hero-section">
+
+<div>
+<img src="images/birthdayplatinum.png" alt="Platinum Decor" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>Platinum Birthday Package</h1>
+
+<p class="price-tag">₹10,000 Onwards</p>
+
+<p>
+Experience a grand celebration with our Platinum tier. This elite package features high-end thematic decorations, professional coverage, and personalized touches to make your day unforgettable.
+</p>
+
+<p>Customized Backdrop Setup -1</p>
+<p>3kg Designer Cake -1</p>
+<p>Professional Photographer -1</p>
+<p>Customized Name Board -1</p>
+<p>Fairy Light & Focus Lights -1</p>
+<p>Video Invitation (Complementary) -1</p>
+<p>Bouquet (Complementary) -1</p>
+<p>15 Photo Polaroids (Complementary) -1</p>
+<p>15 Thank-You Cards (Complementary) -1</p>
+
+</div>
+
+</section>
+
+<div class="details-container">
+
+<div class="section-box">
+
+<h2>Platinum Gallery</h2>
+
+<div class="gallery-scroll-container">
+
+<div class="gallery-item">
+<img src="images/bp1.png">
+</div>
+
+<div class="gallery-item">
+<img src="images/bp2.png">
+</div>
+
+<div class="gallery-item">
+<img src="images/bp3.png">
+</div>
+
+</div>
+
+</div>
+
+<div class="section-box">
+
+<h2>Main Services</h2>
+
+<p>
+Our Platinum decor features a majestic multi-layered backdrop integrated with professional stage lighting and shimmering metallic accents. A dedicated professional photographer captures every moment of the celebration.
+</p>
+
+</div>
+
+<div class="section-box">
+
+<h2>Cake Details</h2>
+
+<p>
+The centerpiece is a grand 3kg designer cake, fully customizable to match your chosen theme and color palette, finished with a bespoke acrylic name topper.
+</p>
+
+</div>
+
+<div class="section-box">
+
+<h2>Complementary Services</h2>
+
+<p>
+We include a professionally designed video invitation, 15 instant polaroid memories, a fresh flower bouquet, and personalized thank-you cards for your guests.
+</p>
+
+</div>
+
+<button class="book-btn" onclick="openModal()">BOOK NOW</button>
+
+</div>
+
+<div id="bookingModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeModal()">&times;</span>
+
+<h2 style="color:#8d0809;text-align:center;margin-bottom:20px;">
+Book Your Platinum Event
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Birthday">
+<input type="hidden" name="package_type" value="Platinum">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" placeholder="Enter your name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" name="phone" placeholder="Your contact number" required>
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>Location</label>
+<input type="text" name="location" placeholder="Venue Address">
+</div>
+
+<div class="form-group">
+<label>Event Details *</label>
+<textarea name="event_details" rows="4" placeholder="Tell us about your event"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+<hr style="margin:20px 0;">
+
+<p style="text-align:center;font-size:0.9rem;">
+<b>Contact Us:</b> +91 8778318394 | mail@tharunam2026@gmail.com
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function openModal(){
+document.getElementById('bookingModal').style.display='block';
+}
+
+function closeModal(){
+document.getElementById('bookingModal').style.display='none';
+}
+
+window.onclick=function(event){
+let modal=document.getElementById('bookingModal');
+if(event.target==modal){
+modal.style.display="none";
+}
+}
+
+</script>
+
+</body>
+</html>

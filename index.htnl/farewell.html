@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell Party - Tharunam</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #fdf2f2; color: #333; line-height: 1.6; }
+
+        /* Navbar */
+        .navbar { background: #8d0809; height: 70px; display: flex; align-items: center; padding: 0 50px; position: sticky; top: 0; z-index: 1000; }
+        .back-btn { color: white; text-decoration: none; border: 1px solid white; padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+        .back-btn:hover { background: white; color: #8d0809; }
+
+        /* Hero Section */
+        .hero-section { background: white; padding: 40px 10%; display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; }
+        .hero-img { width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        .package-title h1 { color: #8d0809; font-size: 2.5rem; margin-bottom: 10px; }
+        .price-tag { font-size: 1.5rem; color: #d42427; font-weight: bold; margin-bottom: 20px; }
+
+        /* Content Sections */
+        .details-container { padding: 40px 10%; }
+        .section-box { background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; border-left: 5px solid #8d0809; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .section-box h2 { color: #8d0809; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        /* Gallery Scrolling */
+        .gallery-scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 10px 0 20px 0; scroll-behavior: smooth; }
+        .gallery-item { flex: 0 0 280px; height: 200px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .book-btn { display: block; width: 300px; margin: 40px auto; padding: 15px; background: #8d0809; color: white; text-align: center; font-size: 1.2rem; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; }
+
+        /* Modal Logic */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+        .modal-content { background: white; margin: 5% auto; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; position: relative; }
+        .close-btn { position: absolute; right: 20px; top: 10px; font-size: 2rem; cursor: pointer; color: #8d0809; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .submit-btn { width: 100%; padding: 12px; background: #d42427; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
+        @media (max-width: 768px) { .hero-section { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+<section class="hero-section">
+    <div>
+        <img src="party/party gold.jpeg" alt="Farewell Party" class="hero-img">
+    </div>
+    <div class="package-title">
+        <h1>Farewell Party</h1>
+        <p class="price-tag">₹7,999 Onwards</p>
+        <p>Celebrate the journey, memories, and achievements with a beautifully organized farewell party. Our package focuses on creating a memorable send-off for students, colleagues, or loved ones with elegant decorations and a joyful atmosphere.</p>
+        <p>• Customized Farewell Backdrop</p>
+        <p>• Stage Decoration</p>
+        <p>• Entrance Welcome Board</p>
+        <p>• Balloon & Floral Decorations</p>
+        <p>• Music & Sound Setup</p>
+        <p>• Party Lighting Arrangement</p>
+    </div>
+</section>
+
+<div class="details-container">
+    <div class="section-box">
+        <h2>Gallery</h2>
+        <div class="gallery-scroll-container">
+            <div class="gallery-item"><img src="party/fp1.png" alt="Setup 1"></div>
+            <div class="gallery-item"><img src="party/fp.png" alt="Setup 2"></div>
+            <div class="gallery-item"><img src="party/fp2.png" alt="Setup 3"></div>
+            <div class="gallery-item"><img src="images/bd5.jpg" alt="Setup 4"></div>
+            <div class="gallery-item"><img src="images/bd2.png" alt="Setup 4"></div>
+        </div>
+    </div>
+
+<div class="section-box">
+<h2>Farewell Stage Decor</h2>
+<p>The farewell stage is designed with elegant backdrops, decorative lighting, and stylish balloon arrangements to create the perfect send-off atmosphere. The setup can include customized banners with farewell messages, photo areas, and themed decorations to make the event memorable.</p>
+</div>
+
+<div class="section-box">
+<h2>Celebration Moments</h2>
+<p>Farewell events are filled with emotional speeches, memory sharing, and appreciation moments. Our setup ensures a comfortable stage area with microphones and proper arrangement so everyone can participate in the celebration and express their gratitude.</p>
+</div>
+
+<div class="section-box">
+<h2>Music & Entertainment</h2>
+<p>To make the celebration lively, we provide a complete music setup with speakers and lighting. Background music, dance performances, and fun activities can be organized to create an energetic and enjoyable environment for all guests.</p>
+</div>
+
+<div class="section-box">
+<h2>Photography & Memories</h2>
+<p>Capture the best farewell memories with professional photography coverage. Group photos, emotional moments, and stage celebrations are documented so that everyone can cherish these memories long after the event.</p>
+</div>
+
+<div class="section-box">
+<h2>Complimentary Services</h2>
+<p>As part of the farewell package, we provide a customized digital invitation, a welcome standee for the event entrance, and decorative props for group photos to make the farewell celebration even more special.</p>
+</div>
+
+<button class="book-btn" onclick="openModal()">BOOK NOW</button>
+</div>
+
+<div id="bookingModal" class="modal">
+<div class="modal-content">
+<span class="close-btn" onclick="closeModal()">&times;</span>
+<h2 style="color:#8d0809; text-align:center; margin-bottom:20px;">Book Farewell Party</h2>
+
+ <form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Birthday">
+<input type="hidden" name="package_type" value="Diamond">
+
+<label>Full Name *</label>
+<input type="text" name="name" placeholder="Enter your name" required>
+
+<label>Phone Number *</label>
+<input type="tel" name="phone" placeholder="Your contact number" required>
+
+<label>Event Date *</label>
+<input type="date" name="date" required>
+
+<label>Location</label>
+<input type="text" name="location" placeholder="Venue Address">
+
+<label>Event Details *</label>
+<textarea name="event_details" rows="4" placeholder="Tell us about your event"></textarea>
+
+<button type="submit">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
+<script>
+function openModal(){ document.getElementById('bookingModal').style.display='block'; }
+function closeModal(){ document.getElementById('bookingModal').style.display='none'; }
+window.onclick=function(event){
+if(event.target==document.getElementById('bookingModal')) closeModal();
+}
+</script>
+
+</body>
+</html>

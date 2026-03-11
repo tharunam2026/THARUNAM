@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anniversary Party - Tharunam</title>
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+
+body{
+background:#fdf2f2;
+color:#333;
+line-height:1.6;
+}
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:5px 15px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.package-title h1{
+color:#8d0809;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.5rem;
+color:#d42427;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.3s;
+}
+
+.gallery-item img:hover{
+transform:scale(1.05);
+}
+
+/* FULLSCREEN IMAGE POPUP */
+
+.image-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+z-index:3000;
+}
+
+.image-popup img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+.image-popup span{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+text-align:center;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* BOOKING MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:2rem;
+cursor:pointer;
+color:#8d0809;
+}
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:5px;
+font-weight:bold;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+@media (max-width:768px){
+.hero-section{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="index.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+<section class="hero-section">
+
+<div>
+<img src="epimage/anniversary.jpg" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>Anniversary Party</h1>
+
+<p class="price-tag">₹14,999 Onwards</p>
+
+<p>Celebrate your special milestone with a beautifully organized Anniversary Party.</p>
+
+<p>• Elegant Anniversary Stage Decoration</p>
+<p>• Customized Anniversary Cake</p>
+<p>• Delicious Snacks for Guests</p>
+<p>• Refreshing Mocktails Counter</p>
+<p>• Professional DJ Music Setup</p>
+<p>• Cameraman & Photography Coverage</p>
+<p>• Ambient Lighting & Decorative Props</p>
+
+</div>
+
+</section>
+
+
+<div class="details-container">
+
+<div class="section-box">
+
+<h2>Gallery</h2>
+
+<div class="gallery-scroll-container">
+
+<div class="gallery-item">
+<img src="anniversary/a1.jpg" onclick="openImage(this)">
+</div>
+
+<div class="gallery-item">
+<img src="anniversary/a2.jpg" onclick="openImage(this)">
+</div>
+
+<div class="gallery-item">
+<img src="anniversary/a3.jpg" onclick="openImage(this)">
+</div>
+
+<div class="gallery-item">
+<img src="anniversary/a4.jpg" onclick="openImage(this)">
+</div>
+
+</div>
+
+</div>
+
+<button class="book-btn" onclick="openModal()">BOOK NOW</button>
+
+</div>
+
+
+<!-- IMAGE POPUP -->
+
+<div id="imagePopup" class="image-popup">
+
+<span onclick="closeImage()">×</span>
+
+<img id="popupImg">
+
+</div>
+
+
+<!-- BOOKING MODAL -->
+
+<div id="bookingModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeModal()">×</span>
+
+<h2 style="color:#8d0809;text-align:center;margin-bottom:20px;">
+Book Anniversary Party
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Anniversary Party">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group">
+<label>Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>Venue</label>
+<input type="text" name="venue">
+</div>
+
+<div class="form-group">
+<label>Details</label>
+<textarea name="event_details"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
+
+<script>
+
+/* BOOK MODAL */
+
+function openModal(){
+document.getElementById("bookingModal").style.display="block";
+}
+
+function closeModal(){
+document.getElementById("bookingModal").style.display="none";
+}
+
+window.onclick=function(event){
+if(event.target==document.getElementById("bookingModal")){
+closeModal();
+}
+}
+
+
+/* IMAGE POPUP */
+
+function openImage(img){
+document.getElementById("imagePopup").style.display="flex";
+document.getElementById("popupImg").src=img.src;
+}
+
+function closeImage(){
+document.getElementById("imagePopup").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
