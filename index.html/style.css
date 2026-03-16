@@ -1,0 +1,57 @@
+/* general reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* page width */
+body{
+    font-family: Arial, sans-serif;
+    padding:20px;
+}
+
+/* responsive images */
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* flexible layout */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* cards or sections */
+.card{
+    width:300px;
+    margin:10px;
+}
+
+/* mobile responsive */
+@media (max-width:768px){
+
+    body{
+        padding:10px;
+    }
+
+    .container{
+        width:100%;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    h1,h2,h3,p{
+        text-align:center;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+}
