@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diamond Wedding Package - Tharunam</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#fffcf2;
+color:#333;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:6px 18px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+/* HERO */
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.package-title h1{
+color:#8d0809;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.6rem;
+color:#d42427;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+/* CONTENT */
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 3px 15px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.4s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.modal img{
+max-width:95%;
+max-height:85%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.nav-arrow{
+position:absolute;
+top:50%;
+font-size:60px;
+color:white;
+cursor:pointer;
+}
+
+.left-arrow{
+left:40px;
+}
+
+.right-arrow{
+right:40px;
+}
+
+/* BOOKING MODAL */
+
+.booking-modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:28px;
+cursor:pointer;
+color:#8d0809;
+}
+
+.form-group{
+margin-bottom:15px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group input,
+.form-group textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="marriage.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+
+<section class="hero-section">
+
+<div>
+<img src="marriage/md.jpg" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>Marriage Package - Diamond</h1>
+
+<p class="price-tag">₹12,00,000 Onwards</p>
+
+<p>
+The Diamond Wedding Package by Tharunam is our most luxurious and complete wedding planning experience. This exclusive package covers the entire wedding journey from the engagement ceremony to the grand reception. Every celebration is carefully designed and managed by our expert event planners to create a seamless, elegant, and unforgettable multi-day wedding experience.
+</p>
+
+<p>
+From destination wedding planning and premium decor to celebrity-style couple entries, gourmet catering, and cinematic photography, the Diamond package ensures every moment of your celebration is extraordinary and perfectly executed.
+</p>
+
+<p>• Complete Wedding Event Planning</p>
+<p>• Engagement, Mehndi, Haldi, Sangeet, Wedding & Reception</p>
+<p>• Bachelor Party & Pre-Wedding Celebrations</p>
+<p>• Destination Wedding Planning & Venue Management</p>
+<p>• Luxury Theme Decoration for All Events</p>
+<p>• Premium Catering & Live Food Stall Counters</p>
+<p>• Professional Makeup Artists for Bride & Family</p>
+<p>• Cinematic Photography & Drone Videography</p>
+<p>• Luxury Wedding Invitation Design & Printing</p>
+
+</div>
+
+</section>
+
+
+<div class="details-container">
+
+<div class="section-box">
+
+<h2>Gallery</h2>
+
+<div class="gallery-scroll-container">
+
+<div class="gallery-item"><img src="marriage/md1.jpg"></div>
+<div class="gallery-item"><img src="marriage/md2.png"></div>
+<div class="gallery-item"><img src="marriage/md3.jpg"></div>
+<div class="gallery-item"><img src="marriage/md4.jpg"></div>
+<div class="gallery-item"><img src="marriage/md5.jpg"></div>
+<div class="gallery-item"><img src="marriage/md6.jpg"></div>
+<div class="gallery-item"><img src="marriage/md7.jpg"></div>
+<div class="gallery-item"><img src="marriage/md8.jpg"></div>
+<div class="gallery-item"><img src="marriage/md9.jpg"></div>
+<div class="gallery-item"><img src="marriage/bride make up.jpg"></div>
+<div class="gallery-item"><img src="marriage/wed photo.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg3.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp1.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg2.jpg"></div>
+<div class="gallery-item"><img src="epimage/ff4.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp3.jpg"></div>
+<div class="gallery-item"><img src="images/bd5.jpg"></div>
+</div>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Complete Wedding Event Planning</h2>
+
+<p>
+Our Diamond package manages the entire wedding journey from the engagement ceremony to the final reception celebration. Every event including Mehndi, Haldi, Sangeet, Wedding, and Reception is planned with customized themes, stage setups, lighting designs, and coordinated entertainment programs that ensure each celebration is unique and memorable.
+</p>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Destination Wedding Planning</h2>
+
+<p>
+For couples who dream of a destination wedding, our team manages the complete planning process including venue selection, decor setup, guest arrangements, event logistics, and hospitality services. We ensure a smooth and luxurious experience for both families and guests while transforming the location into a breathtaking wedding venue.
+</p>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Luxury Catering & Live Food Stalls</h2>
+
+<p>
+Guests will enjoy a premium dining experience with multi-cuisine menus prepared by professional chefs. In addition to traditional wedding meals, we provide live food stalls featuring popular dishes, desserts, beverages, and specialty counters that enhance the celebration and create a vibrant dining atmosphere.
+</p>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Professional Makeup & Cinematic Photography</h2>
+
+<p>
+Our professional makeup artists create stunning bridal looks for each event while maintaining elegance and comfort throughout the celebrations. Our photography team captures every moment using cinematic filming techniques, high-resolution photography, and drone videography to create breathtaking wedding films and timeless memories.
+</p>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Invitations & Grand Celebrations</h2>
+
+<p>
+Luxury wedding invitations are designed and printed to match the wedding theme and prestige of the celebration. The Diamond package also includes grand entertainment experiences such as sangeet dance performances, bachelor party planning, and elegant reception arrangements that ensure the entire wedding journey becomes an unforgettable celebration.
+</p>
+
+</div>
+
+<button class="book-btn" onclick="openBooking()">BOOK NOW</button>
+
+</div>
+
+
+<div id="imgModal" class="modal">
+
+<span class="close">&times;</span>
+<span class="nav-arrow left-arrow">&#10094;</span>
+
+<img id="modalImg">
+
+<span class="nav-arrow right-arrow">&#10095;</span>
+
+</div>
+
+
+<div id="bookingModal" class="booking-modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeBooking()">&times;</span>
+
+<h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
+Book Diamond Wedding Package
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Marriage">
+<input type="hidden" name="package_type" value="Diamond">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>Location</label>
+<input type="text" name="location">
+</div>
+
+<div class="form-group">
+<label>Event Details *</label>
+<textarea name="event_details" rows="4"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
+
+<script>
+
+let modal=document.getElementById("imgModal")
+let modalImg=document.getElementById("modalImg")
+let images=document.querySelectorAll(".gallery-item img")
+let currentIndex=0
+
+images.forEach((img,index)=>{
+img.onclick=function(){
+modal.style.display="flex"
+modalImg.src=this.src
+currentIndex=index
+}
+})
+
+function openBooking(){
+document.getElementById("bookingModal").style.display="block"
+}
+
+function closeBooking(){
+document.getElementById("bookingModal").style.display="none"
+}
+
+</script>
+
+</body>
+</html>

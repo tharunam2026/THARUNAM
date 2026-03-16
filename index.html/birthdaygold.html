@@ -134,7 +134,57 @@ transform:scale(1.05);
 width:100%;
 height:100%;
 object-fit:cover;
+cursor:pointer;
 }
+
+/* FULLSCREEN IMAGE VIEWER */
+
+.image-viewer{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+z-index:5000;
+justify-content:center;
+align-items:center;
+}
+
+.image-viewer img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+transform:scale(0.8);
+animation:zoomIn 0.3s forwards;
+}
+
+@keyframes zoomIn{
+to{transform:scale(1);}
+}
+
+.close-viewer{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.nav-arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:55px;
+color:white;
+cursor:pointer;
+padding:10px;
+}
+
+.nav-arrow.left{left:30px;}
+.nav-arrow.right{right:30px;}
 
 /* BOOK BUTTON */
 
@@ -290,15 +340,27 @@ all tailored to your specific color palette.
 <div class="gallery-scroll-container">
 
 <div class="gallery-item">
-<img src="images/bg1.png">
+<img src="images/bg1.png" onclick="openViewer(0)">
 </div>
 
 <div class="gallery-item">
-<img src="images/bg2.png">
+<img src="images/bg2.png" onclick="openViewer(1)">
 </div>
 
 <div class="gallery-item">
-<img src="images/bg3.png">
+<img src="epimage/tqcard.jpeg" onclick="openViewer(2)">
+</div>
+
+<div class="gallery-item">
+<img src="epimage/boquet.jpg" onclick="openViewer(3)">
+</div>
+
+<div class="gallery-item">
+<img src="epimage/polaroid.jpg" onclick="openViewer(4)">
+</div>
+
+<div class="gallery-item">
+<img src="images/bg3.png" onclick="openViewer(5)">
 </div>
 
 </div>
@@ -306,39 +368,40 @@ all tailored to your specific color palette.
 </div>
 
 <div class="section-box">
-
 <h2>Decor Details</h2>
-
 <p>
-Experience a celebration designed to shine. Our Gold package features a professional aluminum foil backdrop,
-elegantly illuminated by a sophisticated lighting system and delicate fairy lights.
+Step into a celebration space designed to impress. Our Gold package features a stunning aluminum foil backdrop that adds a rich and vibrant shine to the venue. The setup is beautifully enhanced with a sophisticated lighting arrangement and delicate fairy lights that create a warm, elegant glow. Every detail is thoughtfully arranged to provide a luxurious ambiance and a picture-perfect backdrop for unforgettable memories.
 </p>
-
 </div>
 
 <div class="section-box">
-
 <h2>Cake Details</h2>
-
 <p>
-Indulge in a premium celebration with our grand 1.5kg to 2kg cake,
-fully customizable in flavor, design, and theme.
+Indulge in a grand centerpiece for your celebration with our premium 1.5kg to 2kg designer cake. Each cake is freshly prepared with high-quality ingredients and crafted to match your chosen theme. You can fully customize the flavor, design, and decoration to suit your special occasion. From elegant finishes to personalized messages, every cake is created to make your celebration truly delightful.
 </p>
-
 </div>
 
 <div class="section-box">
-
 <h2>Complementary Services</h2>
-
 <p>
-To make your celebration even more memorable, the Gold package includes
-a bouquet of seasonal fresh flowers and ten personalized thank-you cards.
+To elevate your celebration experience, our Gold package includes thoughtful complimentary additions. A beautifully arranged bouquet of fresh seasonal flowers adds a touch of elegance and charm to the event. Along with this, ten personalized thank-you cards are provided to express your gratitude to guests. These small yet meaningful details help create a warm and memorable celebration.
 </p>
-
 </div>
 
 <button class="book-btn" onclick="openModal()">BOOK NOW</button>
+
+</div>
+
+<!-- IMAGE VIEWER -->
+
+<div id="imageViewer" class="image-viewer">
+
+<span class="close-viewer" onclick="closeViewer()">×</span>
+
+<img id="viewerImg">
+
+<div class="nav-arrow left" onclick="prevImage()">❮</div>
+<div class="nav-arrow right" onclick="nextImage()">❯</div>
 
 </div>
 
@@ -412,6 +475,71 @@ if(event.target==modal){
 modal.style.display="none";
 }
 }
+
+/* IMAGE VIEWER SCRIPT */
+
+let images=[
+"images/bg1.png",
+"images/bg2.png",
+"epimage/tqcard.jpeg",
+"epimage/boquet.jpg",
+"epimage/polaroid.jpg",
+"images/bg3.png"
+];
+
+let currentIndex=0;
+let startX=0;
+
+function openViewer(index){
+currentIndex=index;
+document.getElementById("imageViewer").style.display="flex";
+document.getElementById("viewerImg").src=images[currentIndex];
+}
+
+function closeViewer(){
+document.getElementById("imageViewer").style.display="none";
+}
+
+function nextImage(){
+currentIndex++;
+if(currentIndex>=images.length){currentIndex=0;}
+document.getElementById("viewerImg").src=images[currentIndex];
+}
+
+function prevImage(){
+currentIndex--;
+if(currentIndex<0){currentIndex=images.length-1;}
+document.getElementById("viewerImg").src=images[currentIndex];
+}
+
+document.addEventListener("keydown",function(e){
+
+if(document.getElementById("imageViewer").style.display==="flex"){
+
+if(e.key==="ArrowRight"){nextImage();}
+if(e.key==="ArrowLeft"){prevImage();}
+if(e.key==="Escape"){closeViewer();}
+
+}
+
+});
+
+/* SWIPE SUPPORT */
+
+const viewer=document.getElementById("imageViewer");
+
+viewer.addEventListener("touchstart",function(e){
+startX=e.changedTouches[0].screenX;
+});
+
+viewer.addEventListener("touchend",function(e){
+
+let endX=e.changedTouches[0].screenX;
+
+if(startX-endX>50){nextImage();}
+if(endX-startX>50){prevImage();}
+
+});
 
 </script>
 

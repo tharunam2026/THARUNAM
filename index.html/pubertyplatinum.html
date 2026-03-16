@@ -1,169 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platinum Puberty Ceremony - Tharunam</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #fffcf2; color: #333; line-height: 1.6; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Navbar */
-        .navbar { background: #8d0809; height: 70px; display: flex; align-items: center; padding: 0 50px; position: sticky; top: 0; z-index: 1000; }
-        .back-btn { color: white; text-decoration: none; border: 1px solid white; padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
-        .back-btn:hover { background: white; color: #8d0809; }
+<title>Platinum Puberty Ceremony - Tharunam</title>
 
-        /* Hero Section */
-        .hero-section { background: white; padding: 40px 10%; display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; }
-        .hero-img { width: 100%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        
-        .package-title h1 { color: #8d0809; font-size: 2.5rem; margin-bottom: 10px; }
-        .price-tag { font-size: 1.5rem; color: #d42427; font-weight: bold; margin-bottom: 20px; }
+<style>
 
-        /* Content Sections */
-        .details-container { padding: 40px 10%; }
-        .section-box { background: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; border-left: 5px solid #8d0809; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .section-box h2 { color: #8d0809; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        
-        /* Gallery Scrolling */
-        .gallery-scroll-container { display: flex; overflow-x: auto; gap: 20px; padding: 10px 0 20px 0; scroll-behavior: smooth; }
-        .gallery-item { flex: 0 0 280px; height: 200px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
-        .book-btn { display: block; width: 300px; margin: 40px auto; padding: 15px; background: #8d0809; color: white; text-align: center; font-size: 1.2rem; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; }
-        .form-group textarea{
-        width:100%;
-        padding:10px;
-        border:1px solid #ccc;
-        border-radius:5px;
-        resize:vertical;
-        }
-        /* Modal Logic */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
-        .modal-content { background: white; margin: 5% auto; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; position: relative; }
-        .close-btn { position: absolute; right: 20px; top: 10px; font-size: 2rem; cursor: pointer; color: #8d0809; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-        .submit-btn { width: 100%; padding: 12px; background: #d42427; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+body{
+background:#fffcf2;
+color:#333;
+line-height:1.6;
+}
 
-        @media (max-width: 768px) { .hero-section { grid-template-columns: 1fr; } }
-    </style>
+/* NAVBAR */
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:6px 18px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+/* HERO */
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.package-title h1{
+color:#8d0809;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.5rem;
+color:#d42427;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+/* CONTENT */
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+/* Visible Scrollbar */
+
+.gallery-scroll-container::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-track{
+background:#eee;
+border-radius:10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb{
+background:#8d0809;
+border-radius:10px;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.4s ease;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+/* GALLERY NAVIGATION BUTTONS */
+
+.gallery-wrapper{
+position:relative;
+}
+
+.gallery-nav{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:#8d0809;
+color:white;
+border:none;
+font-size:28px;
+padding:8px 14px;
+cursor:pointer;
+border-radius:50%;
+z-index:5;
+}
+
+.gallery-prev{
+left:-10px;
+}
+
+.gallery-next{
+right:-10px;
+}
+/* BOOK BUTTON */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* IMAGE MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.modal img{
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+/* BOOKING MODAL */
+
+.booking-modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:28px;
+cursor:pointer;
+color:#8d0809;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:15px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-section{
+grid-template-columns:1fr;
+}
+
+.gallery-item{
+flex:0 0 220px;
+height:160px;
+}
+
+.book-btn{
+width:90%;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
 <nav class="navbar">
-    <a href="pubertyceremony.html" class="back-btn">← Back to Packages</a>
+<a href="pubertyceremony.html" class="back-btn">← Back to Packages</a>
 </nav>
 
+
 <section class="hero-section">
-    <div>
-        <img src="pubertyimg/puberty platinum.png" alt="Platinum Puberty Ceremony" class="hero-img">
-    </div>
-    <div class="package-title">
-        <h1>Puberty Ceremony - Platinum</h1>
-        <p class="price-tag">₹85,000 Onwards</p>
-        <p>Experience the ultimate celebration of heritage and luxury. Our Platinum package is a royal tribute featuring high-energy traditional music, sacred rituals, and a grand banquet for a truly magnificent Manjal Neerattu Vizha.</p>
-        <p>• Fully Customizable Grand Designer Backdrop</p>
-        <p>• High-Energy Jenda Melam Performance</p>
-        <p>• Sacred Homam & Rituals by Prohithar</p>
-        <p>• Celebrity-Style Makeup & HD Photography</p>
-        <p>• Premium Buffet Catering (300+ Guests)</p>
-        <p>• 11+ Artistically Curated Seeru Thattu</p>
-    </div>
+
+<div>
+<img src="pubertyimg/puberty platinum.png" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>Puberty Ceremony - Platinum</h1>
+
+<p class="price-tag">₹85,000 Onwards</p>
+
+<p>
+Experience the ultimate celebration of heritage and luxury. Our Platinum package is crafted for families who want a truly majestic Manjal Neerattu Vizha with grand decor, powerful traditional performances, and an unforgettable guest experience.
+</p>
+
+<p>• Fully Customizable Designer Stage Backdrop</p>
+<p>• High-Energy Jenda Melam Performance</p>
+<p>• Sacred Homam Ritual Conducted by Prohithar</p>
+<p>• Celebrity-Style Makeup & Cinematic Photography</p>
+<p>• Premium Buffet Catering (300+ Guests)</p>
+<p>• 11+ Artistically Arranged Seeru Thattu</p>
+
+</div>
+
 </section>
 
+
 <div class="details-container">
-    <div class="section-box">
-        <h2>Gallery</h2>
-        <div class="gallery-scroll-container">
-            <div class="gallery-item"><img src="pubertyimg/pp1.jpg" alt="Grand Stage"></div>
-            <div class="gallery-item"><img src="pubertyimg/pp2.jpg" alt="Jenda Melam"></div>
-            <div class="gallery-item"><img src="pubertyimg/pp3.jpg" alt="Ritual Homam"></div>
-            <div class="gallery-item"><img src="pubertyimg/pp4.jpg" alt="Buffet Spread"></div>
-        </div>
-    </div>
 
-    <div class="section-box">
-        <h2>Bespoke Decor & Grand Stage</h2>
-        <p>Our Platinum decor offers a completely customizable, grand designer backdrop that serves as a stunning centerpiece for your event. From intricate floral architectures to modern luxury themes, we tailor every inch of the stage to your vision. The ambiance is further elevated by our expansive ritual display featuring over 11 artistically curated Seeru Thattu, representing the pinnacle of traditional elegance.</p>     
-    </div>
+<div class="section-box">
 
-    <div class="section-box">
-        <h2>Energy & Spirituality: Jenda Melam & Homam</h2>
-        <p>Make a grand statement with the thunderous and auspicious beats of <b>Jenda Melam</b>, perfect for a high-energy ceremonial entry. To ensure a blessed beginning, we provide a professional <b>Prohithar</b> to conduct the sacred <b>Homam</b> and traditional rituals, bringing spiritual depth and divine blessings to the transition into womanhood.</p>
-    </div>
+<h2>Gallery</h2>
 
-    <div class="section-box">
-        <h2>Elite Artistry & Cinematic Memories</h2>
-        <p>Our top-tier Makeup Artists provide a celebrity-grade styling experience, ensuring a flawless and radiant look for the entire ceremony. This is captured by our premium HD photography and videography team, who utilize cinematic techniques to document every ritual, smile, and grand moment in a high-production highlight film.</p>
-    </div>
+<div class="gallery-wrapper">
 
-    <div class="section-box">
-        <h2>The Grand Banquet & Invitations</h2>
-        <p>Impress your guests with a lavish <b>Buffet Catering</b> experience, meticulously designed for large gatherings of <b>300 members and above</b>. Featuring a wide array of gourmet South Indian and multi-cuisine delicacies, the feast is as grand as the celebration itself. To announce your event, we provide premium, hand-picked physical invitation cards that reflect the luxury of the Platinum experience.</p>
-    </div>
+<button class="gallery-nav gallery-prev" onclick="scrollGallery(-1)">❮</button>
 
-    <div class="section-box">
-        <h2>Complimentary Signature Gifts</h2>
-        <p>In this royal package, we include a bespoke <b>Cinematic Video Invitation</b> for social media and a personalized <b>Guest Welcome Board</b> to greet your loved ones at the entrance.</p>
-    </div>
+<div class="gallery-scroll-container" id="gallery">
 
-    <button class="book-btn" onclick="openModal()">BOOK NOW</button>
+<div class="gallery-item"><img src="pubertyimg/pp1.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp2.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp3.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp4.jpg"></div>
+
 </div>
 
-<div id="bookingModal" class="modal">
-    <div class="modal-content">
+<button class="gallery-nav gallery-next" onclick="scrollGallery(1)">❯</button>
 
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-
-        <h2 style="color:#8d0809; text-align:center; margin-bottom:20px;">
-            Book Platinum Puberty Package
-        </h2>
-
-        <form action="https://formspree.io/f/maqpeyej" method="POST">
-
-            <input type="hidden" name="event_type" value="Puberty">
-            <input type="hidden" name="package_type" value="Platinum">
-
-            <div class="form-group">
-                <label>Full Name *</label>
-                <input type="text" name="name" placeholder="Enter your name" required>
-            </div>
-
-            <div class="form-group">
-                <label>Phone Number *</label>
-                <input type="tel" name="phone" placeholder="Your contact number" required>
-            </div>
-
-            <div class="form-group">
-                <label>Event Date *</label>
-                <input type="date" name="date" required>
-            </div>
-
-            <div class="form-group">
-                <label>Location</label>
-                <input type="text" name="location" placeholder="Venue Address">
-            </div>
-
-            <div class="form-group">
-                <label>Event Details *</label>
-                <textarea name="event_details" rows="4" placeholder="Tell us about your event"></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">SEND ENQUIRY</button>
-
-        </form>
-
-    </div>
 </div>
+
+</div>
+
+
+<div class="section-box">
+<h2>Bespoke Decor & Grand Stage</h2>
+<p>
+Our Platinum décor package transforms the venue into a spectacular ceremonial setting with a fully customizable designer stage. The backdrop is crafted with premium flowers, artistic lighting, and luxury stage elements to create a visually breathtaking centerpiece. The stage design can be personalized based on traditional or modern themes to match your family’s vision. To enhance the cultural significance of the event, more than 11 beautifully arranged Seeru Thattu displays are included, creating a grand and elegant ritual environment for the ceremony.
+</p>
+</div>
+
+
+<div class="section-box">
+<h2>Energy & Spirituality</h2>
+<p>
+This package brings together spiritual depth and vibrant celebration. The ceremony begins with sacred Homam rituals conducted by an experienced Prohithar who performs the traditional rites with precision and devotion. These rituals symbolize blessings, prosperity, and protection for the young girl entering womanhood. To elevate the energy of the event, a powerful Jenda Melam performance fills the venue with rhythmic beats and festive excitement, creating a dramatic and unforgettable ceremonial atmosphere.
+</p>
+</div>
+
+
+<div class="section-box">
+<h2>Elite Artistry & Cinematic Memories</h2>
+<p>
+Our professional makeup artists provide celebrity-level styling designed specifically for traditional ceremonies. The styling highlights natural beauty while ensuring a radiant and elegant appearance throughout the event. Meanwhile, our cinematic photography team captures every moment using modern storytelling techniques. From emotional family interactions to sacred rituals, each memory is documented in high-resolution photos and a beautifully edited cinematic highlight film that preserves your celebration forever.
+</p>
+</div>
+
+
+<div class="section-box">
+<h2>Grand Banquet Experience</h2>
+<p>
+The Platinum package includes a lavish buffet catering service designed for grand gatherings of more than 300 guests. A wide variety of authentic South Indian delicacies and carefully curated multi-cuisine dishes are served to provide an exceptional dining experience. From welcome drinks to the final dessert, every dish reflects traditional hospitality and premium quality. Elegant physical invitation cards are also included, ensuring your guests receive a prestigious and memorable invitation to this grand celebration.
+</p>
+</div>
+
+
+<div class="section-box">
+<h2>Complimentary Signature Gifts</h2>
+<p>
+To enhance the luxury experience, the Platinum package includes special complimentary features designed to impress your guests. A professionally produced cinematic digital invitation video is created to share your celebration across social media platforms. Additionally, a beautifully designed personalized welcome board is placed at the venue entrance to greet guests with elegance. These thoughtful additions blend modern creativity with traditional celebration, making your event even more memorable.
+</p>
+</div>
+
+
+<button class="book-btn" onclick="openBooking()">BOOK NOW</button>
+
+</div>
+
+
+<!-- IMAGE MODAL -->
+
+<div id="imgModal" class="modal">
+<span class="close">&times;</span>
+<img id="modalImg">
+</div>
+
+
+<!-- BOOKING MODAL -->
+
+<div id="bookingModal" class="booking-modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeBooking()">&times;</span>
+
+<h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
+Book Platinum Puberty Package
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Puberty">
+<input type="hidden" name="package_type" value="Platinum">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>Location</label>
+<input type="text" name="location">
+</div>
+
+<div class="form-group">
+<label>Event Details *</label>
+<textarea name="event_details" rows="4"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
 
 <script>
-    function openModal() { document.getElementById('bookingModal').style.display = 'block'; }
-    function closeModal() { document.getElementById('bookingModal').style.display = 'none'; }
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('bookingModal')) closeModal();
-    }
+
+/* IMAGE MODAL */
+
+let modal=document.getElementById("imgModal")
+let modalImg=document.getElementById("modalImg")
+
+let images=document.querySelectorAll(".gallery-item img")
+let currentIndex=0
+
+images.forEach((img,index)=>{
+
+img.onclick=function(){
+modal.style.display="flex"
+modalImg.src=this.src
+currentIndex=index
+}
+
+})
+
+document.querySelector(".close").onclick=function(){
+modal.style.display="none"
+}
+
+/* KEYBOARD NAVIGATION */
+
+document.addEventListener("keydown",function(e){
+
+if(modal.style.display==="flex"){
+
+if(e.key==="ArrowRight"){
+currentIndex=(currentIndex+1)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+if(e.key==="ArrowLeft"){
+currentIndex=(currentIndex-1+images.length)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+}
+
+})
+
+/* BOOKING MODAL */
+
+function openBooking(){
+document.getElementById("bookingModal").style.display="block"
+}
+
+function closeBooking(){
+document.getElementById("bookingModal").style.display="none"
+}
+/* GALLERY SCROLL BUTTON */
+
+function scrollGallery(direction){
+
+let container=document.getElementById("gallery")
+
+let scrollAmount=300
+
+container.scrollLeft+=direction*scrollAmount
+
+}
 </script>
 
 </body>

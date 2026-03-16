@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,8 @@ color:#333;
 line-height:1.6;
 }
 
+/* NAVBAR */
+
 .navbar{
 background:#8d0809;
 height:70px;
@@ -30,7 +33,7 @@ z-index:1000;
 color:white;
 text-decoration:none;
 border:1px solid white;
-padding:5px 15px;
+padding:6px 18px;
 border-radius:20px;
 transition:0.3s;
 }
@@ -40,44 +43,65 @@ background:white;
 color:#8d0809;
 }
 
-.hero-section{
-background:white;
-padding:40px 10%;
-display:grid;
-grid-template-columns:1.5fr 1fr;
-gap:30px;
+/* HERO */
+
+.hero{
+height:80vh;
+background:url("epimage/anniversary.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 }
 
-.hero-img{
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
 width:100%;
-border-radius:10px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+height:100%;
+background:rgba(0,0,0,0.45);
 }
 
-.package-title h1{
-color:#8d0809;
-font-size:2.5rem;
+.hero-content{
+position:relative;
+text-align:center;
+color:white;
+z-index:2;
+}
+
+.hero-content h1{
+font-size:3rem;
 margin-bottom:10px;
+}
+
+.hero-content p{
+font-size:1.3rem;
 }
 
 .price-tag{
 font-size:1.5rem;
-color:#d42427;
+margin-top:10px;
 font-weight:bold;
-margin-bottom:20px;
+color:#ffcccc;
 }
 
+/* CONTAINER */
+
 .details-container{
-padding:40px 10%;
+padding:60px 10%;
 }
+
+/* SECTION BOX */
 
 .section-box{
 background:white;
-padding:30px;
+padding:35px;
 border-radius:10px;
-margin-bottom:30px;
+margin-bottom:35px;
 border-left:5px solid #8d0809;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 .section-box h2{
@@ -93,8 +117,12 @@ padding-bottom:10px;
 display:flex;
 overflow-x:auto;
 gap:20px;
-padding:10px 0 20px 0;
+padding:15px 0 25px 0;
 scroll-behavior:smooth;
+}
+
+.gallery-scroll-container::-webkit-scrollbar{
+display:none;
 }
 
 .gallery-item{
@@ -102,43 +130,43 @@ flex:0 0 280px;
 height:200px;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 4px 8px rgba(0,0,0,0.1);
 cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
 .gallery-item img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:0.3s;
+transition:0.4s;
 }
 
-.gallery-item img:hover{
-transform:scale(1.05);
+.gallery-item:hover img{
+transform:scale(1.08);
 }
 
-/* FULLSCREEN IMAGE POPUP */
+/* FULLSCREEN VIEWER */
 
-.image-popup{
+.viewer{
 display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.85);
-justify-content:center;
+background:rgba(0,0,0,0.95);
 align-items:center;
+justify-content:center;
 z-index:3000;
 }
 
-.image-popup img{
+.viewer img{
 max-width:90%;
 max-height:90%;
 border-radius:10px;
 }
 
-.image-popup span{
+.close{
 position:absolute;
 top:30px;
 right:40px;
@@ -147,29 +175,42 @@ color:white;
 cursor:pointer;
 }
 
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:50px;
+color:white;
+cursor:pointer;
+padding:20px;
+}
+
+.prev{left:20px;}
+.next{right:20px;}
+
 /* BOOK BUTTON */
 
 .book-btn{
 display:block;
 width:300px;
-margin:40px auto;
-padding:15px;
+margin:50px auto;
+padding:16px;
 background:#8d0809;
 color:white;
 text-align:center;
 font-size:1.2rem;
 font-weight:bold;
 border:none;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
 }
 
-/* BOOKING MODAL */
+/* MODAL */
 
 .modal{
 display:none;
 position:fixed;
-z-index:2000;
+z-index:4000;
 left:0;
 top:0;
 width:100%;
@@ -225,12 +266,6 @@ font-weight:bold;
 cursor:pointer;
 }
 
-@media (max-width:768px){
-.hero-section{
-grid-template-columns:1fr;
-}
-}
-
 </style>
 </head>
 
@@ -240,28 +275,12 @@ grid-template-columns:1fr;
 <a href="index.html" class="back-btn">← Back to Packages</a>
 </nav>
 
-<section class="hero-section">
+<section class="hero">
 
-<div>
-<img src="epimage/anniversary.jpg" class="hero-img">
-</div>
-
-<div class="package-title">
-
+<div class="hero-content">
 <h1>Anniversary Party</h1>
-
-<p class="price-tag">₹14,999 Onwards</p>
-
-<p>Celebrate your special milestone with a beautifully organized Anniversary Party.</p>
-
-<p>• Elegant Anniversary Stage Decoration</p>
-<p>• Customized Anniversary Cake</p>
-<p>• Delicious Snacks for Guests</p>
-<p>• Refreshing Mocktails Counter</p>
-<p>• Professional DJ Music Setup</p>
-<p>• Cameraman & Photography Coverage</p>
-<p>• Ambient Lighting & Decorative Props</p>
-
+<p>Celebrate love and milestones with elegance</p>
+<div class="price-tag">₹14,999 Onwards</div>
 </div>
 
 </section>
@@ -269,44 +288,146 @@ grid-template-columns:1fr;
 
 <div class="details-container">
 
+
+<!-- GALLERY -->
+
 <div class="section-box">
 
-<h2>Gallery</h2>
+<h2>Event Gallery</h2>
 
 <div class="gallery-scroll-container">
 
 <div class="gallery-item">
-<img src="anniversary/a1.jpg" onclick="openImage(this)">
+<img src="anniversary/a1.jpg" onclick="openViewer(0)">
 </div>
 
 <div class="gallery-item">
-<img src="anniversary/a2.jpg" onclick="openImage(this)">
+<img src="anniversary/a2.jpg" onclick="openViewer(1)">
 </div>
 
 <div class="gallery-item">
-<img src="anniversary/a3.jpg" onclick="openImage(this)">
+<img src="anniversary/a3.jpg" onclick="openViewer(2)">
 </div>
 
 <div class="gallery-item">
-<img src="anniversary/a4.jpg" onclick="openImage(this)">
+<img src="anniversary/a4.jpg" onclick="openViewer(3)">
 </div>
 
 </div>
 
 </div>
+
+
+<!-- DECOR -->
+
+<div class="section-box">
+
+<h2>Decor Details</h2>
+
+<p>
+Our anniversary decor features elegant stage setups with premium floral styling,
+LED backdrops, neon couple name signs, romantic lighting arrangements,
+and customized theme decorations designed to match the celebration style.
+Whether it is a wedding anniversary or a company anniversary celebration,
+our décor team creates a luxurious atmosphere that enhances the beauty of the event.
+</p>
+
+</div>
+
+
+<!-- CAKE -->
+
+<div class="section-box">
+
+<h2>Cake Details</h2>
+
+<p>
+Every anniversary celebration includes a premium customized anniversary cake
+starting from **2kg**, freshly prepared with rich cream layers and elegant designs.
+The cake can be personalized with couple names, anniversary year numbers,
+or company branding depending on the celebration type.
+</p>
+
+</div>
+
+
+<!-- PHOTOGRAPHY -->
+
+<div class="section-box">
+
+<h2>Photographer</h2>
+
+<p>
+Our professional photographers capture every memorable moment of your celebration,
+from stage ceremonies and cake cutting to guest interactions and dance moments.
+High-quality images ensure that your anniversary memories are preserved beautifully.
+</p>
+
+</div>
+
+
+<!-- DJ -->
+
+<div class="section-box">
+
+<h2>DJ & Music</h2>
+
+<p>
+To create an energetic party atmosphere, we provide a professional DJ setup
+with high-quality sound systems, party lighting, and dance floor music.
+Guests can enjoy a lively celebration filled with music and entertainment.
+</p>
+
+</div>
+
+
+<!-- MASCOT -->
+
+<div class="section-box">
+
+<h2>Mascot Entertainment</h2>
+
+<p>
+For family-friendly celebrations, mascot characters can be included to entertain
+children and guests with fun interactions, photos, and stage performances,
+making the celebration more lively and memorable.
+</p>
+
+</div>
+
+
+<!-- CATERING -->
+
+<div class="section-box">
+
+<h2>Catering & Celebration</h2>
+
+<p>
+Guests can enjoy delicious buffet catering including snacks, desserts,
+and refreshing mocktails. Additional celebration effects such as cold pyro
+spark fountains, neon lighting effects, and themed props can also be arranged
+to elevate the overall party experience.
+</p>
+
+</div>
+
 
 <button class="book-btn" onclick="openModal()">BOOK NOW</button>
 
 </div>
 
 
-<!-- IMAGE POPUP -->
 
-<div id="imagePopup" class="image-popup">
+<!-- FULLSCREEN VIEWER -->
 
-<span onclick="closeImage()">×</span>
+<div class="viewer" id="viewer">
 
-<img id="popupImg">
+<span class="close" onclick="closeViewer()">×</span>
+
+<span class="nav-btn prev" onclick="prevImage()">❮</span>
+<span class="nav-btn next" onclick="nextImage()">❯</span>
+
+<img id="viewerImg">
 
 </div>
 
@@ -362,35 +483,45 @@ Book Anniversary Party
 
 <script>
 
-/* BOOK MODAL */
+const images=[
+"anniversary/a1.jpg",
+"anniversary/a2.jpg",
+"anniversary/a3.jpg",
+"anniversary/a4.jpg"
+]
+
+let index=0
+
+function openViewer(i){
+index=i
+document.getElementById("viewer").style.display="flex"
+document.getElementById("viewerImg").src=images[index]
+}
+
+function closeViewer(){
+document.getElementById("viewer").style.display="none"
+}
+
+function nextImage(){
+index=(index+1)%images.length
+document.getElementById("viewerImg").src=images[index]
+}
+
+function prevImage(){
+index=(index-1+images.length)%images.length
+document.getElementById("viewerImg").src=images[index]
+}
 
 function openModal(){
-document.getElementById("bookingModal").style.display="block";
+document.getElementById("bookingModal").style.display="block"
 }
 
 function closeModal(){
-document.getElementById("bookingModal").style.display="none";
-}
-
-window.onclick=function(event){
-if(event.target==document.getElementById("bookingModal")){
-closeModal();
-}
-}
-
-
-/* IMAGE POPUP */
-
-function openImage(img){
-document.getElementById("imagePopup").style.display="flex";
-document.getElementById("popupImg").src=img.src;
-}
-
-function closeImage(){
-document.getElementById("imagePopup").style.display="none";
+document.getElementById("bookingModal").style.display="none"
 }
 
 </script>
 
 </body>
 </html>
+```

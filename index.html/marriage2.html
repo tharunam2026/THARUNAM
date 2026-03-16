@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gold Wedding Package - Tharunam</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#fffcf2;
+color:#333;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:6px 18px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+/* HERO */
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.package-title h1{
+color:#8d0809;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.6rem;
+color:#d42427;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+/* CONTENT */
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 3px 15px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+.gallery-scroll-container::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.4s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* IMAGE MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.modal img{
+max-width:95%;
+max-height:85%;
+border-radius:10px;
+}
+
+/* CLOSE BUTTON */
+
+.close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+/* NAV ARROWS */
+
+.nav-arrow{
+position:absolute;
+top:50%;
+font-size:60px;
+color:white;
+cursor:pointer;
+padding:10px;
+user-select:none;
+}
+
+.left-arrow{
+left:40px;
+}
+
+.right-arrow{
+right:40px;
+}
+
+/* BOOKING MODAL */
+
+.booking-modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:28px;
+cursor:pointer;
+color:#8d0809;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:15px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-section{
+grid-template-columns:1fr;
+}
+
+.nav-arrow{
+font-size:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="marriage.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+
+<section class="hero-section">
+
+<div>
+<img src="marriage/mg.jpg" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>Marriage Package - Gold</h1>
+
+<p class="price-tag">₹4,50,000 Onwards</p>
+
+<p>
+The Gold Wedding Package by Tharunam is crafted for couples who want a luxurious and memorable wedding celebration that perfectly blends tradition, elegance, and modern entertainment. This package covers every major element of the wedding experience including grand stage decoration, premium catering, professional photography, bridal makeup, invitation design, and spectacular bride & groom entry effects.
+</p>
+
+<p>
+Our experienced event planning team manages the entire celebration from invitation preparation to reception entertainment, ensuring a smooth and stress-free experience for families. Every detail is carefully designed to create a visually stunning and emotionally unforgettable wedding day.
+</p>
+
+<p>• Grand Premium Wedding Stage & Mandap Decoration</p>
+<p>• Bride & Groom Grand Entry with Pyro & Smoke Effects</p>
+<p>• Premium Catering Service for Large Gatherings</p>
+<p>• DJ Setup & Reception Entertainment</p>
+<p>• Professional Bridal Makeup Artist</p>
+<p>• Cinematic Wedding Photography & Videography</p>
+<p>• Elegant Wedding Invitation Design & Printing</p>
+<p>• Complete Reception Stage Setup</p>
+
+</div>
+
+</section>
+
+
+<div class="details-container">
+
+<div class="section-box">
+
+<h2>Gallery</h2>
+
+<div class="gallery-scroll-container">
+<div class="gallery-item"><img src="marriage/mg1.jpg"></div>
+<div class="gallery-item"><img src="marriage/mg2.jpg"></div>
+<div class="gallery-item"><img src="marriage/mg3.png"></div>
+<div class="gallery-item"><img src="marriage/mg4.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp4.jpg"></div>
+<div class="gallery-item"><img src="marriage/bride make up.jpg"></div>
+<div class="gallery-item"><img src="marriage/wed photo.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg3.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp1.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg2.jpg"></div>
+<div class="gallery-item"><img src="epimage/ff4.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp3.jpg"></div>
+
+</div>
+
+</div>
+
+
+<div class="section-box">
+<h2>Grand Wedding Stage Decoration</h2>
+
+<p>
+The Gold wedding package features a majestic wedding stage designed with luxurious floral arrangements, elegant draping fabrics, decorative panels, and premium lighting effects. The mandap becomes the visual centerpiece of the entire wedding ceremony. Every decorative element is carefully arranged to create a rich and sophisticated atmosphere that highlights the beauty of the rituals and provides a breathtaking backdrop for photography and guest interactions.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Bride & Groom Grand Entry with Pyro Effects</h2>
+
+<p>
+One of the most exciting highlights of the celebration is the grand bride and groom entry. Our team designs a spectacular entrance experience using synchronized music, decorative pathways, cold pyro effects, and elegant smoke effects that create a magical visual moment as the couple enters the venue. The entry setup is carefully coordinated to ensure safety while delivering an unforgettable cinematic experience for guests and photographers.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Luxury Catering Experience</h2>
+
+<p>
+Our premium catering service provides a complete culinary experience for wedding guests. The menu includes a rich variety of traditional South Indian wedding dishes along with modern cuisine options prepared by professional chefs using high-quality ingredients. From welcome drinks to a complete festive meal service, the catering team ensures guests enjoy delicious food served with hospitality and elegance throughout the event.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Professional Makeup & Photography</h2>
+
+<p>
+The Gold package includes professional bridal makeup services designed to enhance the bride’s natural beauty while perfectly complementing traditional bridal attire and jewelry. Our expert photographers and videographers capture every important moment including rituals, candid emotions, family celebrations, and the grand reception. Cinematic filming techniques and high-resolution photography ensure your wedding memories are preserved beautifully for a lifetime.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Invitations & Reception Entertainment</h2>
+
+<p>
+Elegant wedding invitations are designed and printed to reflect the theme and prestige of the celebration. Our team also organizes the reception event with a dedicated stage setup, professional DJ system, and lively entertainment atmosphere where guests can celebrate joyfully with the newly married couple. The reception decor complements the wedding theme and creates a vibrant environment for photos, greetings, and celebrations.
+</p>
+
+</div>
+
+
+<button class="book-btn" onclick="openBooking()">BOOK NOW</button>
+
+</div>
+
+
+<div id="imgModal" class="modal">
+
+<span class="close">&times;</span>
+
+<span class="nav-arrow left-arrow">&#10094;</span>
+
+<img id="modalImg">
+
+<span class="nav-arrow right-arrow">&#10095;</span>
+
+</div>
+
+
+<div id="bookingModal" class="booking-modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeBooking()">&times;</span>
+
+<h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
+Book Gold Wedding Package
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Marriage">
+<input type="hidden" name="package_type" value="Gold">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>Location</label>
+<input type="text" name="location">
+</div>
+
+<div class="form-group">
+<label>Event Details *</label>
+<textarea name="event_details" rows="4"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
+
+<script>
+
+let modal=document.getElementById("imgModal")
+let modalImg=document.getElementById("modalImg")
+let images=document.querySelectorAll(".gallery-item img")
+let currentIndex=0
+
+images.forEach((img,index)=>{
+img.onclick=function(){
+modal.style.display="flex"
+modalImg.src=this.src
+currentIndex=index
+}
+})
+
+document.querySelector(".close").onclick=function(){
+modal.style.display="none"
+}
+
+document.querySelector(".left-arrow").onclick=function(){
+currentIndex=(currentIndex-1+images.length)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+document.querySelector(".right-arrow").onclick=function(){
+currentIndex=(currentIndex+1)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+document.addEventListener("keydown",function(e){
+
+if(modal.style.display==="flex"){
+
+if(e.key==="ArrowRight"){
+currentIndex=(currentIndex+1)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+if(e.key==="ArrowLeft"){
+currentIndex=(currentIndex-1+images.length)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+}
+
+})
+
+function openBooking(){
+document.getElementById("bookingModal").style.display="block"
+}
+
+function closeBooking(){
+document.getElementById("bookingModal").style.display="none"
+}
+
+</script>
+
+</body>
+</html>

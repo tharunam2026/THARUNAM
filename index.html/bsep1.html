@@ -104,18 +104,69 @@ padding:10px 0 20px 0;
 scroll-behavior:smooth;
 }
 
+/* Visible Scrollbar */
+
+.gallery-scroll-container::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-track{
+background:#eee;
+border-radius:10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb{
+background:#8d0809;
+border-radius:10px;
+}
+
 .gallery-item{
 flex:0 0 280px;
 height:200px;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 4px 8px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .gallery-item img{
 width:100%;
 height:100%;
 object-fit:cover;
+transition:transform 0.4s ease;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* Image Viewer */
+
+.image-modal{
+display:none;
+position:fixed;
+z-index:3000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.image-modal img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+}
+
+.image-close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
 }
 
 /* Button */
@@ -199,9 +250,20 @@ cursor:pointer;
 }
 
 @media(max-width:768px){
+
 .hero-section{
 grid-template-columns:1fr;
 }
+
+.gallery-item{
+flex:0 0 220px;
+height:160px;
+}
+
+.book-btn{
+width:90%;
+}
+
 }
 
 </style>
@@ -221,17 +283,20 @@ grid-template-columns:1fr;
 
 <div class="package-title">
 
-<h1>Baby Shower</h1>
+<h1>Baby Shower - Gold</h1>
+
 <p class="price-tag">₹8,000 Onwards</p>
 
-<p>Bless the mother-to-be with a traditional and serene environment. Our package focuses on elegant floral aesthetics and comfort for the ceremony.</p>
+<p>
+Celebrate the beautiful journey of motherhood with an elegant and culturally rich baby shower ceremony. Our Gold package creates a warm and joyful atmosphere where family and friends gather to bless the mother-to-be. Traditional décor, graceful seating arrangements, and meaningful rituals combine to create a celebration filled with love and happiness. Every element of the event is carefully arranged to highlight the sacred significance of the occasion. The result is a memorable and emotionally touching celebration for both family and guests.
+</p>
 
-<p>• Traditional Backdrop</p>
+<p>• Traditional Backdrop Setup</p>
 <p>• Elegant Seating for Mother-to-be</p>
 <p>• Entrance Welcome Board</p>
 <p>• Traditional Music Playback</p>
 <p>• 15-20 Varieties of Bangles for Rituals</p>
-<p>• 5 or 7 Varieties Food</p>
+<p>• 5-7 Variety Traditional Feast</p>
 
 </div>
 
@@ -254,34 +319,53 @@ grid-template-columns:1fr;
 
 <div class="section-box">
 <h2>Traditional Decor</h2>
-<p>Celebrate this sacred milestone in a setting that honors tradition with a modern touch. Our baby shower décor features elegant floral arrangements, traditional banana leaf decorations, and a beautiful seating setup for the mother-to-be. The stage and backdrop are carefully designed to highlight the rituals and create a warm and sacred atmosphere for the celebration.</p>
+<p>
+Our décor design beautifully blends traditional South Indian aesthetics with soft floral elegance. The ceremony stage is decorated with fresh flowers, banana leaves, and sacred elements that highlight the importance of the occasion. A specially arranged seating area is prepared for the mother-to-be so she becomes the radiant center of the celebration. Warm lighting and traditional elements create a calm and joyful atmosphere for the rituals.
+</p>
 </div>
 
 <div class="section-box">
 <h2>Traditional Feast</h2>
-<p>Guests will enjoy an authentic South Indian feast with carefully prepared traditional dishes. The menu includes 5 to 7 varieties of flavorful items served in a classic style that reflects the warmth and richness of home-cooked celebrations.</p>
+<p>
+Guests are treated to a delightful South Indian feast featuring 5 to 7 carefully prepared dishes. Each item is selected to reflect the richness of traditional home celebrations and festive hospitality. The food is served with warmth and authenticity, ensuring every guest enjoys a memorable dining experience during the ceremony.
+</p>
 </div>
 
 <div class="section-box">
 <h2>Makeup & Styling</h2>
-<p>Our professional makeup artist ensures the mother-to-be looks radiant and graceful. The styling focuses on a natural glowing appearance using high-quality products so she feels comfortable and confident throughout the ceremony.</p>
+<p>
+Our professional makeup artist ensures the mother-to-be looks graceful and radiant throughout the celebration. Using premium products and natural styling techniques, we create a glowing appearance that complements traditional attire while maintaining comfort during the rituals and photography sessions.
+</p>
 </div>
 
 <div class="section-box">
 <h2>Photography</h2>
-<p>A professional photographer captures the emotional moments, traditional rituals, and joyful family memories of the celebration. Every special moment is preserved in high-quality images to cherish forever.</p>
+<p>
+A professional photographer captures the heartfelt emotions, blessings, and joyful moments of the celebration. From ritual highlights to candid family moments, every memory is preserved in high-quality photographs that the family can cherish for years to come.
+</p>
 </div>
 
 <div class="section-box">
 <h2>Complimentary</h2>
-<p>As part of our special package, we provide a bangles set for the ritual ceremony and a beautifully designed digital invitation so you can easily invite your loved ones to celebrate this precious occasion.</p>
+<p>
+To make the celebration even more special, we include ritual bangles for the ceremony and a beautifully designed digital invitation card that can be easily shared with friends and relatives through modern platforms.
+</p>
 </div>
 
 <button class="book-btn" onclick="openModal()">BOOK NOW</button>
 
 </div>
 
-<!-- Modal -->
+
+<!-- IMAGE MODAL -->
+
+<div id="imageModal" class="image-modal">
+<span class="image-close">&times;</span>
+<img id="modalImage">
+</div>
+
+
+<!-- BOOKING MODAL -->
 
 <div id="bookingModal" class="modal">
 
@@ -315,7 +399,7 @@ Book Baby Shower Package
 
 <div class="form-group">
 <label>Location</label>
-<input type="text" name="location" placeholder="Venue Address">
+<input type="text" name="location">
 </div>
 
 <div class="form-group">
@@ -331,6 +415,49 @@ Book Baby Shower Package
 </div>
 
 <script>
+
+/* Image Viewer */
+
+let modal=document.getElementById("imageModal")
+let modalImg=document.getElementById("modalImage")
+let images=document.querySelectorAll(".gallery-item img")
+let index=0
+
+images.forEach((img,i)=>{
+
+img.onclick=function(){
+modal.style.display="flex"
+modalImg.src=this.src
+index=i
+}
+
+})
+
+document.querySelector(".image-close").onclick=function(){
+modal.style.display="none"
+}
+
+/* Arrow Navigation */
+
+document.addEventListener("keydown",function(e){
+
+if(modal.style.display==="flex"){
+
+if(e.key==="ArrowRight"){
+index=(index+1)%images.length
+modalImg.src=images[index].src
+}
+
+if(e.key==="ArrowLeft"){
+index=(index-1+images.length)%images.length
+modalImg.src=images[index].src
+}
+
+}
+
+})
+
+/* Booking modal */
 
 function openModal(){
 document.getElementById("bookingModal").style.display="block";

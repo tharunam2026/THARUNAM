@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,18 +104,69 @@ padding:10px 0 20px 0;
 scroll-behavior:smooth;
 }
 
+/* Visible Scrollbar */
+
+.gallery-scroll-container::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-track{
+background:#eee;
+border-radius:10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb{
+background:#8d0809;
+border-radius:10px;
+}
+
 .gallery-item{
 flex:0 0 280px;
 height:200px;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 4px 8px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .gallery-item img{
 width:100%;
 height:100%;
 object-fit:cover;
+transition:transform 0.4s ease;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* Image Modal */
+
+.image-modal{
+display:none;
+position:fixed;
+z-index:3000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.image-modal img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+}
+
+.image-close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
 }
 
 /* Button */
@@ -199,9 +250,20 @@ cursor:pointer;
 }
 
 @media(max-width:768px){
+
 .hero-section{
 grid-template-columns:1fr;
 }
+
+.gallery-item{
+flex:0 0 220px;
+height:160px;
+}
+
+.book-btn{
+width:90%;
+}
+
 }
 
 </style>
@@ -216,7 +278,7 @@ grid-template-columns:1fr;
 <section class="hero-section">
 
 <div>
-<img src="epimage/ff.png" alt="Annaprassana" class="hero-img">
+<img src="epimage/ff.png" class="hero-img">
 </div>
 
 <div class="package-title">
@@ -224,7 +286,9 @@ grid-template-columns:1fr;
 <h1>Annaprassana</h1>
 <p class="price-tag">₹7,999 Onwards</p>
 
-<p>Celebrate the sacred first feeding ceremony of your baby with a traditional and spiritual setup that reflects the beauty of our culture.</p>
+<p>
+Celebrate your baby’s sacred first feeding ceremony with a beautifully arranged traditional event that reflects cultural richness and family warmth. Our Annaprassana setup blends spiritual rituals, elegant décor, and thoughtful arrangements to create a meaningful celebration. Every detail is carefully planned to honor the significance of this milestone in the child’s life. The ceremony becomes a cherished gathering where family blessings and joyful memories come together.
+</p>
 
 <p>• Traditional Backdrop</p>
 <p>• Plate Arrangement</p>
@@ -240,7 +304,6 @@ grid-template-columns:1fr;
 <div class="details-container">
 
 <div class="section-box">
-
 <h2>Gallery</h2>
 
 <div class="gallery-scroll-container">
@@ -251,46 +314,50 @@ grid-template-columns:1fr;
 <div class="gallery-item"><img src="epimage/ff4.jpg"></div>
 
 </div>
-
 </div>
 
 <div class="section-box">
-
 <h2>Sacred Decor</h2>
 
-<p>The Annaprassana setup features a vibrant traditional backdrop decorated with fresh mango leaves and marigold flowers symbolizing prosperity. A comfortable seating arrangement is provided for the parents and baby, along with traditional brass lamps to create a divine and festive atmosphere.</p>
+<p>
+Our décor captures the spiritual beauty of traditional ceremonies with elegant floral arrangements and auspicious elements. Mango leaves, marigold flowers, and traditional brass lamps are used to symbolize prosperity and divine blessings. The stage is thoughtfully arranged to highlight the baby and parents during the ritual moments. Warm lighting and cultural elements create a serene and joyful ceremonial atmosphere.
+</p>
 
 </div>
 
 <div class="section-box">
-
 <h2>The Feeding Ritual</h2>
 
-<p>We arrange a decorated feeding plate set that includes traditional bowls used during the ritual. The setup ensures the baby’s first feeding moment is celebrated beautifully with blessings from family members and elders.</p>
+<p>
+The centerpiece of the ceremony is the beautifully arranged traditional feeding plate prepared for the baby's first taste of solid food. The ritual is conducted with guidance from elders and family members, making it an emotionally meaningful moment. Our setup ensures the ritual takes place comfortably and elegantly. Every element is arranged to highlight the importance of this sacred milestone.
+</p>
 
 </div>
 
 <div class="section-box">
-
 <h2>Vedic Homam</h2>
 
-<p>An experienced Prohithar performs the Agni Homam and Ayush Homam to pray for the baby’s health, prosperity, and long life. All pooja essentials such as ghee, sacred items, fruits, and offerings are provided.</p>
+<p>
+An experienced Prohithar performs the sacred Agni Homam and Ayush Homam to seek divine blessings for the child’s health, prosperity, and long life. All ritual materials including ghee, sacred offerings, fruits, and pooja essentials are provided. The ceremony follows traditional Vedic practices to maintain authenticity and spiritual significance. The homam adds a divine and peaceful atmosphere to the celebration.
+</p>
 
 </div>
 
 <div class="section-box">
-
 <h2>Photography & Memories</h2>
 
-<p>A professional photographer captures every special moment of the baby’s first feeding ceremony including the rituals, candid emotions, and family portraits so that these memories can be cherished forever.</p>
+<p>
+A professional photographer captures every heartfelt moment of the ceremony, from sacred rituals to joyful family interactions. The event is documented with high-quality photography that highlights emotions, traditions, and candid memories. These photographs become treasured keepsakes for the family. Each image preserves the beauty and significance of the baby’s first feeding celebration.
+</p>
 
 </div>
 
 <div class="section-box">
-
 <h2>Complimentary Services</h2>
 
-<p>We provide a customized digital invitation, traditional ritual items for the ceremony, and decorative elements that enhance the celebration and make the event more memorable.</p>
+<p>
+To make the celebration even more memorable, we include thoughtfully designed digital invitations that can be easily shared with family and friends. Traditional ritual items and decorative accessories are also provided to enhance the ceremony setup. These additional touches ensure the event feels complete and beautifully organized. Every detail contributes to creating a joyful and seamless celebration.
+</p>
 
 </div>
 
@@ -298,7 +365,16 @@ grid-template-columns:1fr;
 
 </div>
 
-<!-- Modal -->
+
+<!-- Image Modal -->
+
+<div id="imageModal" class="image-modal">
+<span class="image-close">&times;</span>
+<img id="modalImage">
+</div>
+
+
+<!-- Booking Modal -->
 
 <div id="bookingModal" class="modal">
 
@@ -332,7 +408,7 @@ Book Annaprassana Package
 
 <div class="form-group">
 <label>Location</label>
-<input type="text" name="location" placeholder="Venue Address">
+<input type="text" name="location">
 </div>
 
 <div class="form-group">
@@ -345,10 +421,53 @@ Book Annaprassana Package
 </form>
 
 </div>
-
 </div>
 
+
 <script>
+
+/* Gallery Viewer */
+
+let modal=document.getElementById("imageModal")
+let modalImg=document.getElementById("modalImage")
+let images=document.querySelectorAll(".gallery-item img")
+let index=0
+
+images.forEach((img,i)=>{
+
+img.onclick=function(){
+modal.style.display="flex"
+modalImg.src=this.src
+index=i
+}
+
+})
+
+document.querySelector(".image-close").onclick=function(){
+modal.style.display="none"
+}
+
+/* Arrow navigation */
+
+document.addEventListener("keydown",function(e){
+
+if(modal.style.display==="flex"){
+
+if(e.key==="ArrowRight"){
+index=(index+1)%images.length
+modalImg.src=images[index].src
+}
+
+if(e.key==="ArrowLeft"){
+index=(index-1+images.length)%images.length
+modalImg.src=images[index].src
+}
+
+}
+
+})
+
+/* Booking Modal */
 
 function openModal(){
 document.getElementById("bookingModal").style.display="block";
@@ -368,4 +487,3 @@ closeModal();
 
 </body>
 </html>
-```

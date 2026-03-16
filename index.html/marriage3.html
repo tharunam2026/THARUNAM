@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Platinum Wedding Package - Tharunam</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#fffcf2;
+color:#333;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:6px 18px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+/* HERO */
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+.package-title h1{
+color:#8d0809;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.6rem;
+color:#d42427;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+/* CONTENT */
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 3px 15px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.4s;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.modal img{
+max-width:95%;
+max-height:85%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.nav-arrow{
+position:absolute;
+top:50%;
+font-size:60px;
+color:white;
+cursor:pointer;
+}
+
+.left-arrow{
+left:40px;
+}
+
+.right-arrow{
+right:40px;
+}
+
+/* BOOKING MODAL */
+
+.booking-modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:28px;
+cursor:pointer;
+color:#8d0809;
+}
+
+.form-group{
+margin-bottom:15px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group input,
+.form-group textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="marriage.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+
+<section class="hero-section">
+
+<div>
+<img src="marriage/mp.jpg" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>Marriage Package - Platinum</h1>
+
+<p class="price-tag">₹7,50,000 Onwards</p>
+
+<p>
+Experience a total venue transformation with custom theme decor, from the grand entrance to the mandap. Our expert team handles every detail—including professional photography and premium catering—to ensure an unforgettable, stress-free celebration.
+</p>
+
+<p>• Customized Theme-Based Wedding Decoration</p>
+<p>• Full Mandap & Stage Luxury Decor</p>
+<p>• Welcome Area Floral Entrance Decoration</p>
+<p>• Professional Photo Booth Setup</p>
+<p>• Cinematic Wedding Photography & Videography</p>
+<p>• Professional Bridal Makeup Artist</p>
+<p>• Premium Catering Service</p>
+<p>• Live Nathasvaram or Chenda Melam Performance</p>
+<p>• Elegant Wedding Invitation Design & Printing</p>
+
+</div>
+
+</section>
+
+
+<div class="details-container">
+
+<div class="section-box">
+
+<h2>Gallery</h2>
+
+<div class="gallery-scroll-container">
+<div class="gallery-item"><img src="marriage/mp3.png"></div>
+<div class="gallery-item"><img src="marriage/mp2.jpg"></div>
+<div class="gallery-item"><img src="marriage/bride make up.jpg"></div>
+<div class="gallery-item"><img src="marriage/wed photo.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg3.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp1.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg2.jpg"></div>
+<div class="gallery-item"><img src="epimage/ff4.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp3.jpg"></div>
+<div class="gallery-item"><img src="images/bd5.jpg"></div>
+
+</div>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Customized Theme Decor</h2>
+
+<p>
+Our Platinum package transforms the entire venue using a customized wedding theme designed according to the couple's preferences. The decoration includes elegant floral arrangements, luxury fabric draping, decorative lighting elements, and artistic stage structures that match the selected theme. Every design element is carefully arranged to create a cohesive and visually stunning wedding environment.
+</p>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Full Mandap Decoration</h2>
+
+<p>
+Unlike standard wedding packages that focus only on the stage, the Platinum package decorates the entire mandap area with premium floral arrangements, decorative pillars, hanging flower installations, and ambient lighting. This creates a sacred and majestic atmosphere for the wedding rituals while providing an extraordinary visual experience for guests and photographers.
+</p>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Welcome Area & Photo Booth</h2>
+
+<p>
+The entrance of the wedding venue is beautifully decorated with floral arches, welcome boards, and elegant lighting elements that create a grand first impression for arriving guests. A specially designed photo booth is also installed where guests can capture fun and memorable pictures with themed backgrounds and decorative props.
+</p>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Live Traditional Music</h2>
+
+<p>
+To enhance the traditional atmosphere of the wedding ceremony, the Platinum package includes a live Nathasvaram performance or a vibrant Chenda Melam drum ensemble. These traditional musical performances create a festive and culturally rich environment that adds grandeur to the rituals and the couple's entrance moments.
+</p>
+
+</div>
+
+
+<div class="section-box">
+
+<h2>Photography, Makeup & Catering</h2>
+
+<p>
+Our professional photography and videography team captures every precious moment of the wedding celebration including rituals, candid emotions, and family interactions. The bride is styled by an experienced makeup artist who ensures an elegant bridal look that perfectly complements the wedding attire. Guests are treated to a premium catering experience featuring a wide range of delicious dishes prepared by professional chefs using fresh ingredients.
+</p>
+
+</div>
+
+<button class="book-btn" onclick="openBooking()">BOOK NOW</button>
+
+</div>
+
+
+<div id="imgModal" class="modal">
+
+<span class="close">&times;</span>
+
+<span class="nav-arrow left-arrow">&#10094;</span>
+
+<img id="modalImg">
+
+<span class="nav-arrow right-arrow">&#10095;</span>
+
+</div>
+
+
+<div id="bookingModal" class="booking-modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeBooking()">&times;</span>
+
+<h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
+Book Gold Wedding Package
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Marriage">
+<input type="hidden" name="package_type" value="Gold">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>Location</label>
+<input type="text" name="location">
+</div>
+
+<div class="form-group">
+<label>Event Details *</label>
+<textarea name="event_details" rows="4"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
+
+
+<script>
+
+let modal=document.getElementById("imgModal")
+let modalImg=document.getElementById("modalImg")
+let images=document.querySelectorAll(".gallery-item img")
+let currentIndex=0
+
+images.forEach((img,index)=>{
+img.onclick=function(){
+modal.style.display="flex"
+modalImg.src=this.src
+currentIndex=index
+}
+})
+
+function openBooking(){
+document.getElementById("bookingModal").style.display="block"
+}
+
+function closeBooking(){
+document.getElementById("bookingModal").style.display="none"
+}
+
+</script>
+
+</body>
+</html>

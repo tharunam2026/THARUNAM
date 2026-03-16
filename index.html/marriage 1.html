@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Silver Wedding Package - Tharunam</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#fffcf2;
+color:#333;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:6px 18px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+/* HERO */
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.package-title h1{
+color:#8d0809;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.5rem;
+color:#d42427;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+/* CONTENT */
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+/* Visible Scrollbar */
+
+.gallery-scroll-container::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-track{
+background:#eee;
+border-radius:10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb{
+background:#8d0809;
+border-radius:10px;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform 0.4s ease;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.modal img{
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+/* BOOKING MODAL */
+
+.booking-modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:28px;
+cursor:pointer;
+color:#8d0809;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:15px;
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-section{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="marriage.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+
+<section class="hero-section">
+
+<div>
+<img src="marriage/silver m.jpg" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>Marriage Package - Silver</h1>
+
+<p class="price-tag">₹2,50,000 Onwards</p>
+
+<p>
+The Silver Wedding Package is designed to deliver a beautiful traditional wedding experience with essential premium arrangements. This package ensures every important aspect of the wedding ceremony is organized professionally, combining cultural traditions with elegant event management to create a memorable celebration for families and guests.
+</p>
+
+<p>• Wedding Stage & Mandap Decoration</p>
+<p>• Traditional Agnihoman Ceremony Setup</p>
+<p>• Grand Couple Entry Arrangement</p>
+<p>• Live Music Band / Nadaswaram Performance</p>
+<p>• Professional Catering Service</p>
+<p>• Bridal Makeup Artist</p>
+<p>• Professional Photography Coverage</p>
+
+</div>
+
+</section>
+
+
+<div class="details-container">
+
+<div class="section-box">
+
+<h2>Gallery</h2>
+
+<div class="gallery-scroll-container">
+
+<div class="gallery-item"><img src="marriage/ms1.jpg"></div>
+<div class="gallery-item"><img src="marriage/ms2.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp4.jpg"></div>
+<div class="gallery-item"><img src="marriage/bride make up.jpg"></div>
+<div class="gallery-item"><img src="marriage/wed photo.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg3.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pp1.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg2.jpg"></div>
+<div class="gallery-item"><img src="epimage/ff4.jpg"></div>
+
+</div>
+
+</div>
+
+
+<div class="section-box">
+<h2>Stage Decor</h2>
+<p>
+Set the perfect stage for your 'I Do's.' Our Silver package features a beautifully themed floral mandap and stage setup. We combine elegant drapery, seasonal blooms, and professional spotlighting to create a sophisticated focal point. Whether you prefer a traditional Vedic setup or a modern minimalist aesthetic, our designers craft a backdrop that makes every moment look like a masterpiece.</p>
+</div>
+
+
+<div class="section-box">
+<h2>Photography & Videography</h2>
+<p>
+Preserve your heritage with high-definition memories. Our professional team provides full-event coverage, including traditional photography and cinematic video highlights. We focus on capturing the raw emotions—the laughter, the sacred rituals, and the candid glances. You will receive a professionally edited digital gallery and a highlight film that lets you relive your wedding day for years to come.</p></div>
+
+
+<div class="section-box">
+<h2>Makeup & Styling</h2>
+<p>
+Look your absolute best on your big day with our premium makeup and styling services. Our professional makeup artists specialize in elegant event looks, ensuring you appear confident and camera-ready throughout the celebration. From subtle natural styles to glamorous event makeup, we provide personalized styling that complements your personality and event theme.</p></div>
+
+
+<div class="section-box">
+<h2>Catering Services</h2>
+<p>
+Treat your guests to a rich culinary journey. Our Silver catering menu features a curated selection of traditional and contemporary dishes, prepared with the freshest ingredients. We provide a full service team, elegant buffet setups, and a diverse menu (Welcome Drinks, Starters, Main Course, and Desserts) designed to delight every palate</p>
+</div>
+<div class="section-box">
+<h2>Grand Couple Entry</h2>
+<p>
+Make an entrance that no one will forget. We coordinate a choreographed grand entry for the couple, featuring traditional elements like Nadaswaram or modern touches like cold-fire pyros and flower petal showers. It’s the perfect way to announce your arrival and kick off the festivities with energy and style
+</p>
+</div>
+
+<h2>Designer Invitations</h2>
+<p>
+The celebration begins the moment your guests receive their invite. Our Silver package includes beautifully crafted physical invitation cards or premium digital E-invites. Choose from a variety of elegant templates that reflect your wedding theme, complete with custom typography and traditional motifs.
+</p>
+</div>
+
+
+<button class="book-btn" onclick="openBooking()">BOOK NOW</button>
+
+</div>
+
+
+<div id="imgModal" class="modal">
+<span class="close">&times;</span>
+<img id="modalImg">
+</div>
+
+
+<div id="bookingModal" class="booking-modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeBooking()">&times;</span>
+
+<h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
+Book Silver Wedding Package
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<input type="hidden" name="event_type" value="Marriage">
+<input type="hidden" name="package_type" value="Silver">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>Location</label>
+<input type="text" name="location">
+</div>
+
+<div class="form-group">
+<label>Event Details *</label>
+<textarea name="event_details" rows="4"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
+
+<script>
+
+let modal=document.getElementById("imgModal")
+let modalImg=document.getElementById("modalImg")
+
+document.querySelectorAll(".gallery-item img").forEach((img,index)=>{
+
+img.onclick=function(){
+modal.style.display="flex"
+modalImg.src=this.src
+currentIndex=index
+}
+
+})
+
+document.querySelector(".close").onclick=function(){
+modal.style.display="none"
+}
+
+let images=document.querySelectorAll(".gallery-item img")
+let currentIndex=0
+
+document.addEventListener("keydown",function(e){
+
+if(modal.style.display==="flex"){
+
+if(e.key==="ArrowRight"){
+currentIndex=(currentIndex+1)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+if(e.key==="ArrowLeft"){
+currentIndex=(currentIndex-1+images.length)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+}
+
+})
+
+function openBooking(){
+document.getElementById("bookingModal").style.display="block"
+}
+
+function closeBooking(){
+document.getElementById("bookingModal").style.display="none"
+}
+
+</script>
+
+</body>
+</html>

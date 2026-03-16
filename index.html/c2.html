@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Events - Tharunam</title>
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+
+body{
+background:#fdf2f2;
+color:#333;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#8d0809;
+height:70px;
+display:flex;
+align-items:center;
+padding:0 50px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.back-btn{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:6px 16px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:white;
+color:#8d0809;
+}
+
+/* HERO */
+
+.hero-section{
+background:white;
+padding:40px 10%;
+display:grid;
+grid-template-columns:1.5fr 1fr;
+gap:30px;
+}
+
+.hero-img{
+width:100%;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+object-fit:cover;
+}
+
+.package-title h1{
+color:#8d0809;
+font-size:2.5rem;
+margin-bottom:10px;
+}
+
+.price-tag{
+font-size:1.5rem;
+color:#d42427;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+/* CONTENT */
+
+.details-container{
+padding:40px 10%;
+}
+
+.section-box{
+background:white;
+padding:30px;
+border-radius:10px;
+margin-bottom:30px;
+border-left:5px solid #8d0809;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-box h2{
+color:#8d0809;
+margin-bottom:15px;
+border-bottom:1px solid #eee;
+padding-bottom:10px;
+}
+
+/* GALLERY */
+
+.gallery-scroll-container{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:10px 0 20px 0;
+scroll-behavior:smooth;
+}
+
+/* Visible Scrollbar */
+
+.gallery-scroll-container::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-track{
+background:#eee;
+border-radius:10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb{
+background:#8d0809;
+border-radius:10px;
+}
+
+.gallery-item{
+flex:0 0 280px;
+height:200px;
+border-radius:10px;
+overflow:hidden;
+cursor:pointer;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.3s;
+}
+
+.gallery-item img:hover{
+transform:scale(1.05);
+}
+
+/* IMAGE POPUP */
+
+.image-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:3000;
+}
+
+.image-popup img{
+width:auto;
+height:auto;
+max-width:95%;
+max-height:95%;
+border-radius:10px;
+object-fit:contain;
+}
+
+.image-popup span{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+/* IMAGE NAVIGATION ARROWS */
+
+.nav-arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:50px;
+color:white;
+cursor:pointer;
+padding:10px 20px;
+background:rgba(0,0,0,0.3);
+border-radius:5px;
+user-select:none;
+}
+
+.nav-arrow:hover{
+background:rgba(0,0,0,0.6);
+}
+
+.nav-arrow.left{
+left:30px;
+}
+
+.nav-arrow.right{
+right:30px;
+}
+
+/* BOOK BUTTON */
+
+.book-btn{
+display:block;
+width:300px;
+margin:40px auto;
+padding:15px;
+background:#8d0809;
+color:white;
+text-align:center;
+font-size:1.2rem;
+font-weight:bold;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+}
+
+.modal-content{
+background:white;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:500px;
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:10px;
+font-size:30px;
+cursor:pointer;
+color:#8d0809;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group label{
+display:block;
+font-weight:bold;
+margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.submit-btn{
+width:100%;
+padding:12px;
+background:#d42427;
+color:white;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-section{
+grid-template-columns:1fr;
+}
+
+.gallery-item{
+flex:0 0 220px;
+height:160px;
+}
+
+.book-btn{
+width:90%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<a href="c.html" class="back-btn">← Back to Packages</a>
+</nav>
+
+<section class="hero-section">
+
+<div>
+<img src="cimg/ccc2.jpg" class="hero-img">
+</div>
+
+<div class="package-title">
+
+<h1>College Events</h1>
+
+<p class="price-tag">₹19,999 Onwards</p>
+
+<p>
+College events are some of the most energetic and memorable celebrations in student life. At Tharunam, we specialize in organizing large-scale college events including cultural festivals, sports day celebrations, graduation ceremonies, and campus festivals with professional planning and creative execution.
+</p>
+
+<p>
+Our team ensures every event is organized with stunning stage designs, powerful sound systems, exciting entertainment, and premium arrangements that create a vibrant atmosphere for students and faculty.
+</p>
+
+<p>• Cultural Fest Stage Setup</p>
+<p>• Sports Day Event Management</p>
+<p>• Graduation Ceremony Decoration</p>
+<p>• DJ & Music Setup</p>
+<p>• Food & Beverage Stalls</p>
+<p>• Professional Lighting & Dance Floor</p>
+
+</div>
+
+</section>
+
+
+<div class="details-container">
+
+<div class="section-box">
+<h2>Gallery</h2>
+
+<div class="gallery-scroll-container">
+
+<div class="gallery-item">
+<img src="cimg/ccc1.jpg" onclick="openImage(this)">
+</div>
+
+<div class="gallery-item">
+<img src="cimg/ccc2.jpg" onclick="openImage(this)">
+</div>
+<div class="gallery-item">
+<img src="cimg/ccc3.jpg" onclick="openImage(this)">
+</div>
+<div class="gallery-item">
+<img src="cimg/ccc4.jpg" onclick="openImage(this)">
+</div>
+<div class="gallery-item">
+<img src="images/bd5.jpg" onclick="openImage(this)">
+</div>
+<div class="gallery-item">
+<img src="images/bd4.png" onclick="openImage(this)">
+</div>
+
+<div class="gallery-item">
+<img src="cimg/cs4.jpg" onclick="openImage(this)">
+</div>
+
+<div class="gallery-item">
+<img src="cimg/cs5.jpg" onclick="openImage(this)">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="section-box">
+<h2>Chief Guest Appearance</h2>
+
+<p>
+To make college celebrations more prestigious, we can arrange chief guests
+such as motivational speakers, industry professionals, successful alumni,
+or social influencers. Their presence inspires students and adds importance
+to the event.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>LED Backdrop Stage Setup</h2>
+
+<p>
+Our LED backdrop stages create a modern and high-energy visual experience
+for cultural festivals, DJ nights, and graduation ceremonies. Dynamic LED
+screens display event themes, animations, logos, and live visuals that
+enhance the overall stage performance.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Drone Shoot Coverage</h2>
+
+<p>
+Professional drone videography captures stunning aerial views of the entire
+college event including stage performances, crowd energy, and campus
+celebrations. These cinematic shots create memorable highlight videos
+for the institution.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Photography & Videography</h2>
+
+<p>
+Our professional photographers capture every moment of the event including
+stage performances, award ceremonies, student celebrations, and group
+photos. High-quality videos and photos help preserve the memories of the
+campus festival.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Food & Live Stalls</h2>
+
+<p>
+Live food stalls such as popcorn counters, juice bars, ice cream carts,
+chaat stalls, and snack counters can be arranged to create a carnival
+environment during college festivals. Students enjoy exploring these
+stalls while celebrating the event.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>DJ Night & Music Setup</h2>
+
+<p>
+Our DJ setups include powerful speakers, mixers, microphones, and
+dynamic lighting that create an electrifying party environment for
+college DJ nights, cultural celebrations, and after-party events.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Venue Decoration</h2>
+
+<p>
+We transform college venues with grand entrance arches, stage decor,
+balloon installations, lighting arrangements, banners, and theme-based
+decorations that make the campus celebration visually stunning.
+</p>
+
+</div>
+<div class="section-box">
+<h2>Fashion Show Ramp Setup</h2>
+
+<p>
+For college cultural festivals and fashion events, we design professional
+fashion show ramp stages with stylish walkways, stage lighting, and
+background decor. The ramp setup allows participants to showcase their
+talent with a proper stage environment similar to professional fashion
+events. LED lights along the ramp create a vibrant and glamorous
+experience for the audience.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Laser Lights & Smoke Effects</h2>
+
+<p>
+To create a high-energy party atmosphere during DJ nights and stage
+performances, we provide advanced laser lighting systems, moving stage
+lights, and smoke machines. These effects enhance the music experience
+and create a concert-like environment that excites the crowd and makes
+performances visually stunning.
+</p>
+
+</div>
+
+
+<div class="section-box">
+<h2>Campus Carnival Zone</h2>
+
+<p>
+The campus carnival zone brings a festival-like experience to college
+events with game stalls, fun activities, food counters, and interactive
+entertainment areas. Students can enjoy mini games, food stalls, photo
+booths, and activity corners, making the event lively and memorable
+throughout the celebration.
+</p>
+
+</div>
+
+<button class="book-btn" onclick="openModal()">BOOK NOW</button>
+
+</div>
+
+
+<!-- IMAGE POPUP -->
+
+<div id="imagePopup" class="image-popup">
+
+<span onclick="closeImage()">×</span>
+
+<div class="nav-arrow left" onclick="prevImage()">❮</div>
+
+<img id="popupImg">
+
+<div class="nav-arrow right" onclick="nextImage()">❯</div>
+
+</div>
+
+
+<!-- BOOKING MODAL -->
+
+<div id="bookingModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeModal()">×</span>
+
+<h2 style="color:#8d0809;text-align:center;margin-bottom:20px;">
+Book College Event
+</h2>
+
+<form action="https://formspree.io/f/maqpeyej" method="POST">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Phone *</label>
+<input type="tel" name="phone" required>
+</div>
+
+<div class="form-group">
+<label>Event Date *</label>
+<input type="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label>College / Venue</label>
+<input type="text" name="venue">
+</div>
+
+<div class="form-group">
+<label>Event Details</label>
+<textarea name="event_details"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">SEND ENQUIRY</button>
+
+</form>
+
+</div>
+</div>
+
+
+<script>
+
+function openModal(){
+document.getElementById("bookingModal").style.display="block";
+}
+
+function closeModal(){
+document.getElementById("bookingModal").style.display="none";
+}
+
+window.onclick=function(event){
+if(event.target==document.getElementById("bookingModal")){
+closeModal();
+}
+}
+
+let galleryImages = document.querySelectorAll(".gallery-item img");
+let currentImageIndex = 0;
+
+function openImage(img){
+document.getElementById("imagePopup").style.display="flex";
+
+galleryImages.forEach((image,index)=>{
+if(image.src === img.src){
+currentImageIndex = index;
+}
+});
+
+document.getElementById("popupImg").src = img.src;
+}
+
+function closeImage(){
+document.getElementById("imagePopup").style.display="none";
+}
+
+function nextImage(){
+currentImageIndex++;
+
+if(currentImageIndex >= galleryImages.length){
+currentImageIndex = 0;
+}
+
+document.getElementById("popupImg").src = galleryImages[currentImageIndex].src;
+}
+
+function prevImage(){
+currentImageIndex--;
+
+if(currentImageIndex < 0){
+currentImageIndex = galleryImages.length - 1;
+}
+
+document.getElementById("popupImg").src = galleryImages[currentImageIndex].src;
+}
+
+function closeImage(){
+document.getElementById("imagePopup").style.display="none";
+}
+
+</script>
+
+</body>
+</html>

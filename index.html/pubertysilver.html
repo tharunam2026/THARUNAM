@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Silver Puberty Ceremony - Tharunam</title>
+<title>Gold Puberty Ceremony - Tharunam</title>
 
 <style>
 
@@ -105,7 +106,7 @@ padding-bottom:10px;
 display:flex;
 overflow-x:auto;
 gap:20px;
-padding:10px 0 20px 0;
+padding:10px 0 20px;
 scroll-behavior:smooth;
 }
 
@@ -115,6 +116,7 @@ height:200px;
 border-radius:10px;
 overflow:hidden;
 box-shadow:0 4px 8px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .gallery-item img{
@@ -204,12 +206,69 @@ cursor:pointer;
 margin-top:10px;
 }
 
-/* MOBILE */
+/* IMAGE VIEWER */
+
+.image-viewer{
+display:none;
+position:fixed;
+z-index:3000;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+align-items:center;
+justify-content:center;
+}
+
+.image-viewer img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+animation:zoomIn .3s ease;
+}
+
+@keyframes zoomIn{
+from{transform:scale(.7);}
+to{transform:scale(1);}
+}
+
+.close-viewer{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.prev{left:30px;}
+.next{right:30px;}
 
 @media(max-width:768px){
 
 .hero-section{
 grid-template-columns:1fr;
+}
+
+.gallery-item{
+flex:0 0 220px;
+height:160px;
+}
+
+.book-btn{
+width:90%;
 }
 
 }
@@ -223,32 +282,32 @@ grid-template-columns:1fr;
 <a href="pubertyceremony.html" class="back-btn">← Back to Packages</a>
 </nav>
 
-
 <section class="hero-section">
 
 <div>
-<img src="pubertyimg/puberty silver.jpg" class="hero-img">
+<img src="pubertyimg/puberty gold.png" class="hero-img">
 </div>
 
 <div class="package-title">
 
-<h1>Puberty Ceremony - Silver</h1>
+<h1>Puberty Ceremony - Gold</h1>
 
-<p class="price-tag">₹15,000 Onwards</p>
+<p class="price-tag">₹45,000 Onwards</p>
 
-<p>Honor this traditional transition with a touch of grace. Our Silver package blends authentic South Indian customs with essential professional services for a beautiful Manjal Neerattu Vizha.</p>
+<p>
+Celebrate this grand milestone with unmatched elegance through our Gold Puberty Ceremony package. Designed to elevate the sacred Manjal Neerattu Vizha tradition, this experience blends rich cultural heritage with premium event arrangements. From majestic floral stage decor and live traditional music to cinematic photography and grand catering, every detail is crafted to create a spectacular celebration. Our team ensures the ceremony reflects dignity, joy, and unforgettable family memories.
+</p>
 
-<p>• Traditional Floral Backdrop with Garlands</p>
-<p>• 5 Artistically Arranged Seeru Thattu</p>
-<p>• Professional Makeup & Hairstyling</p>
-<p>• HD Event Photography</p>
-<p>• Authentic Catering Service</p>
-<p>• Manjal Neerattu Ritual Essentials</p>
+<p>• Majestic Premium Floral Backdrop</p>
+<p>• Live Nathasvaram & Thavil Performance</p>
+<p>• Premium Bridal Makeup & Hairstyling</p>
+<p>• Cinematic Photography & Highlights</p>
+<p>• Grand Catering Service (200+ Guests)</p>
+<p>• Traditional Seeru Thattu Arrangements</p>
 
 </div>
 
 </section>
-
 
 <div class="details-container">
 
@@ -258,51 +317,46 @@ grid-template-columns:1fr;
 
 <div class="gallery-scroll-container">
 
-<div class="gallery-item"><img src="pubertyimg/ps1.jpg"></div>
-<div class="gallery-item"><img src="pubertyimg/ps2.png"></div>
-<div class="gallery-item"><img src="pubertyimg/ps3.jpg"></div>
-<div class="gallery-item"><img src="pubertyimg/ps4.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg1.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg2.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg3.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pg4.jpg"></div>
 
 </div>
 
 </div>
-
 
 <div class="section-box">
-<h2>Traditional Decor & Setting</h2>
-<p>Celebrate this milestone with a sacred floral backdrop decorated with fresh garlands and traditional motifs along with artistically arranged Seeru Thattu.</p>
+<h2>Majestic Decor & Ambience</h2>
+<p>
+A grand floral stage backdrop designed with premium flowers, decorative garlands, and traditional elements that create a majestic and festive ceremonial atmosphere.
+</p>
 </div>
-
 
 <div class="section-box">
-<h2>Artistry & Style</h2>
-<p>Professional makeup and hairstyling ensuring the young lady looks radiant and elegant throughout the ceremony.</p>
+<h2>Traditional Music & Styling</h2>
+<p>
+Live Nathasvaram and Thavil performances enrich the sacred ambience while our professional makeup and styling team ensures the young lady looks radiant and elegant throughout the ceremony.
+</p>
 </div>
-
 
 <div class="section-box">
-<h2>Professional Photography</h2>
-<p>HD photography service capturing every ritual moment and joyful memory with family and friends.</p>
+<h2>Cinematic Photography</h2>
+<p>
+Our professional photography team captures every ritual, candid moment, and celebration through cinematic photography and highlight videos that preserve memories beautifully.
+</p>
 </div>
-
 
 <div class="section-box">
-<h2>The Ritual Feast</h2>
-<p>Authentic South Indian catering service prepared with traditional recipes and premium ingredients.</p>
+<h2>Grand Feast Experience</h2>
+<p>
+Guests enjoy a grand traditional South Indian feast prepared with premium ingredients and authentic recipes, creating a delightful dining experience for everyone attending the celebration.
+</p>
 </div>
-
-
-<div class="section-box">
-<h2>Complimentary Essentials</h2>
-<p>Customized digital invitation for sharing the event details with relatives and loved ones.</p>
-</div>
-
 
 <button class="book-btn" onclick="openModal()">BOOK NOW</button>
 
 </div>
-
-
 
 <!-- BOOKING MODAL -->
 
@@ -313,13 +367,13 @@ grid-template-columns:1fr;
 <span class="close-btn" onclick="closeModal()">&times;</span>
 
 <h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
-Book Silver Puberty Package
+Book Gold Puberty Package
 </h2>
 
 <form action="https://formspree.io/f/maqpeyej" method="POST">
 
 <input type="hidden" name="event_type" value="Puberty">
-<input type="hidden" name="package_type" value="Silver">
+<input type="hidden" name="package_type" value="Gold">
 
 <div class="form-group">
 <label>Full Name *</label>
@@ -342,7 +396,7 @@ Book Silver Puberty Package
 </div>
 
 <div class="form-group">
-<label>Event Details *</label>
+<label>Event Details</label>
 <textarea name="event_details" rows="4"></textarea>
 </div>
 
@@ -353,9 +407,78 @@ Book Silver Puberty Package
 </div>
 </div>
 
+<!-- FULL SCREEN IMAGE VIEWER -->
 
+<div id="imageViewer" class="image-viewer">
+
+<span class="close-viewer" onclick="closeViewer()">×</span>
+
+<img id="viewerImage">
+
+<button class="nav-btn prev" onclick="prevImage()">❮</button>
+<button class="nav-btn next" onclick="nextImage()">❯</button>
+
+</div>
 
 <script>
+
+let images=document.querySelectorAll('.gallery-item img');
+let currentIndex=0;
+
+images.forEach((img,index)=>{
+
+img.addEventListener("click",()=>{
+
+document.getElementById("imageViewer").style.display="flex";
+document.getElementById("viewerImage").src=img.src;
+currentIndex=index;
+
+});
+
+});
+
+function closeViewer(){
+document.getElementById("imageViewer").style.display="none";
+}
+
+function nextImage(){
+currentIndex++;
+if(currentIndex>=images.length){currentIndex=0;}
+document.getElementById("viewerImage").src=images[currentIndex].src;
+}
+
+function prevImage(){
+currentIndex--;
+if(currentIndex<0){currentIndex=images.length-1;}
+document.getElementById("viewerImage").src=images[currentIndex].src;
+}
+
+document.addEventListener("keydown",function(e){
+
+if(document.getElementById("imageViewer").style.display==="flex"){
+
+if(e.key==="ArrowRight"){nextImage();}
+if(e.key==="ArrowLeft"){prevImage();}
+if(e.key==="Escape"){closeViewer();}
+
+}
+
+});
+
+let startX=0;
+
+document.getElementById("imageViewer").addEventListener("touchstart",function(e){
+startX=e.touches[0].clientX;
+});
+
+document.getElementById("imageViewer").addEventListener("touchend",function(e){
+
+let endX=e.changedTouches[0].clientX;
+
+if(startX-endX>50){nextImage();}
+if(endX-startX>50){prevImage();}
+
+});
 
 function openModal(){
 document.getElementById("bookingModal").style.display="block";

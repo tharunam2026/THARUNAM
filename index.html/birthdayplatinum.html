@@ -118,13 +118,18 @@ height:200px;
 border-radius:10px;
 overflow:hidden;
 box-shadow:0 4px 8px rgba(0,0,0,0.1);
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery-item:hover{
+transform:scale(1.05);
 }
 
 .gallery-item img{
 width:100%;
 height:100%;
 object-fit:cover;
-display:block;
 }
 
 /* Button */
@@ -209,12 +214,72 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* Responsive */
+/* Image Viewer */
+
+.image-viewer{
+display:none;
+position:fixed;
+z-index:3000;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+align-items:center;
+justify-content:center;
+}
+
+.image-viewer img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+animation:zoomIn .3s ease;
+}
+
+@keyframes zoomIn{
+from{transform:scale(.7);}
+to{transform:scale(1);}
+}
+
+.close-viewer{
+position:absolute;
+top:25px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:50px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+padding:10px;
+}
+
+.prev{left:40px;}
+.next{right:40px;}
 
 @media(max-width:768px){
+
 .hero-section{
 grid-template-columns:1fr;
 }
+
+.gallery-item{
+flex:0 0 220px;
+height:160px;
+}
+
+.book-btn{
+width:90%;
+}
+
 }
 
 </style>
@@ -247,9 +312,9 @@ Experience a grand celebration with our Platinum tier. This elite package featur
 <p>Professional Photographer -1</p>
 <p>Customized Name Board -1</p>
 <p>Fairy Light & Focus Lights -1</p>
+<p>Bouquet  -1</p>
+<p>15 Photo Polaroids -1</p>
 <p>Video Invitation (Complementary) -1</p>
-<p>Bouquet (Complementary) -1</p>
-<p>15 Photo Polaroids (Complementary) -1</p>
 <p>15 Thank-You Cards (Complementary) -1</p>
 
 </div>
@@ -264,50 +329,38 @@ Experience a grand celebration with our Platinum tier. This elite package featur
 
 <div class="gallery-scroll-container">
 
-<div class="gallery-item">
-<img src="images/bp1.png">
-</div>
-
-<div class="gallery-item">
-<img src="images/bp2.png">
-</div>
-
-<div class="gallery-item">
-<img src="images/bp3.png">
-</div>
+<div class="gallery-item"><img src="images/bp1.png"></div>
+<div class="gallery-item"><img src="images/bp2.png"></div>
+<div class="gallery-item"><img src="images/bp3.png"></div>
+<div class="gallery-item"><img src="epimage/boquet.jpg"></div>
+<div class="gallery-item"><img src="epimage/polaroid.jpg"></div>
+<div class="gallery-item"><img src="epimage/tqcard.jpeg"></div>
+<div class="gallery-item"><img src="epimage/photographer.jpg"></div>
+<div class="gallery-item"><img src="epimage/Birthday  board.jpg"></div>
 
 </div>
 
 </div>
 
 <div class="section-box">
-
 <h2>Main Services</h2>
-
 <p>
 Our Platinum decor features a majestic multi-layered backdrop integrated with professional stage lighting and shimmering metallic accents. A dedicated professional photographer captures every moment of the celebration.
 </p>
-
 </div>
 
 <div class="section-box">
-
 <h2>Cake Details</h2>
-
 <p>
 The centerpiece is a grand 3kg designer cake, fully customizable to match your chosen theme and color palette, finished with a bespoke acrylic name topper.
 </p>
-
 </div>
 
 <div class="section-box">
-
 <h2>Complementary Services</h2>
-
 <p>
 We include a professionally designed video invitation, 15 instant polaroid memories, a fresh flower bouquet, and personalized thank-you cards for your guests.
 </p>
-
 </div>
 
 <button class="book-btn" onclick="openModal()">BOOK NOW</button>
@@ -331,12 +384,12 @@ Book Your Platinum Event
 
 <div class="form-group">
 <label>Full Name *</label>
-<input type="text" name="name" placeholder="Enter your name" required>
+<input type="text" name="name" required>
 </div>
 
 <div class="form-group">
 <label>Phone Number *</label>
-<input type="tel" name="phone" placeholder="Your contact number" required>
+<input type="tel" name="phone" required>
 </div>
 
 <div class="form-group">
@@ -346,12 +399,12 @@ Book Your Platinum Event
 
 <div class="form-group">
 <label>Location</label>
-<input type="text" name="location" placeholder="Venue Address">
+<input type="text" name="location">
 </div>
 
 <div class="form-group">
 <label>Event Details *</label>
-<textarea name="event_details" rows="4" placeholder="Tell us about your event"></textarea>
+<textarea name="event_details" rows="4"></textarea>
 </div>
 
 <button type="submit" class="submit-btn">SEND ENQUIRY</button>
@@ -368,7 +421,65 @@ Book Your Platinum Event
 
 </div>
 
+<div id="imageViewer" class="image-viewer">
+<span class="close-viewer" onclick="closeViewer()">×</span>
+<img id="viewerImage">
+<button class="nav-btn prev" onclick="prevImage()">❮</button>
+<button class="nav-btn next" onclick="nextImage()">❯</button>
+</div>
+
 <script>
+
+let images=document.querySelectorAll('.gallery-item img');
+let viewer=document.getElementById("imageViewer");
+let viewerImage=document.getElementById("viewerImage");
+let currentIndex=0;
+
+images.forEach((img,index)=>{
+img.addEventListener("click",()=>{
+viewer.style.display="flex";
+viewerImage.src=img.src;
+currentIndex=index;
+});
+});
+
+function closeViewer(){
+viewer.style.display="none";
+}
+
+viewer.addEventListener("click",(e)=>{
+if(e.target===viewer) closeViewer();
+});
+
+function nextImage(){
+currentIndex=(currentIndex+1)%images.length;
+viewerImage.src=images[currentIndex].src;
+}
+
+function prevImage(){
+currentIndex=(currentIndex-1+images.length)%images.length;
+viewerImage.src=images[currentIndex].src;
+}
+
+document.addEventListener("keydown",(e)=>{
+if(viewer.style.display==="flex"){
+if(e.key==="ArrowRight") nextImage();
+if(e.key==="ArrowLeft") prevImage();
+if(e.key==="Escape") closeViewer();
+}
+});
+
+let startX=0;
+
+viewer.addEventListener("touchstart",(e)=>{
+startX=e.touches[0].clientX;
+});
+
+viewer.addEventListener("touchend",(e)=>{
+let endX=e.changedTouches[0].clientX;
+if(startX-endX>50) nextImage();
+if(endX-startX>50) prevImage();
+});
 
 function openModal(){
 document.getElementById('bookingModal').style.display='block';

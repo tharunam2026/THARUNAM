@@ -101,12 +101,20 @@ padding-bottom:10px;
 
 /* GALLERY */
 
+.gallery-wrapper{
+position:relative;
+}
+
 .gallery-scroll-container{
 display:flex;
 overflow-x:auto;
 gap:20px;
-padding:10px 0 20px 0;
+padding:10px 40px 20px 40px;
 scroll-behavior:smooth;
+}
+
+.gallery-scroll-container::-webkit-scrollbar{
+display:none;
 }
 
 .gallery-item{
@@ -114,13 +122,43 @@ flex:0 0 280px;
 height:200px;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 4px 8px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .gallery-item img{
 width:100%;
 height:100%;
 object-fit:cover;
+transition:transform 0.4s ease;
+}
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+/* SCROLL BUTTONS */
+
+.scroll-btn{
+position:absolute;
+top:45%;
+transform:translateY(-50%);
+background:#8d0809;
+color:white;
+border:none;
+font-size:25px;
+width:40px;
+height:40px;
+border-radius:50%;
+cursor:pointer;
+z-index:5;
+}
+
+.scroll-left{
+left:0;
+}
+
+.scroll-right{
+right:0;
 }
 
 /* BOOK BUTTON */
@@ -142,6 +180,36 @@ cursor:pointer;
 /* MODAL */
 
 .modal{
+display:none;
+position:fixed;
+z-index:2000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.modal img{
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+/* BOOKING MODAL */
+
+.booking-modal{
 display:none;
 position:fixed;
 z-index:2000;
@@ -189,7 +257,6 @@ margin-bottom:5px;
 padding:10px;
 border:1px solid #ccc;
 border-radius:5px;
-width:100%;
 }
 
 .submit-btn{
@@ -236,7 +303,9 @@ grid-template-columns:1fr;
 
 <p class="price-tag">₹45,000 Onwards</p>
 
-<p>Celebrate this grand milestone with unmatched splendor. Our Gold package offers a majestic traditional experience.</p>
+<p>
+Celebrate this grand milestone with unmatched splendor. Our Gold package is designed to bring together tradition, elegance, and modern event excellence to create a memorable Manjal Neerattu Vizha celebration.
+</p>
 
 <p>• Majestic Traditional Floral Backdrop</p>
 <p>• Live Nathasvaram & Thavil Performance</p>
@@ -256,12 +325,20 @@ grid-template-columns:1fr;
 
 <h2>Gallery</h2>
 
-<div class="gallery-scroll-container">
+<div class="gallery-wrapper">
+
+<button class="scroll-btn scroll-left" onclick="scrollGallery(-300)">❮</button>
+
+<div class="gallery-scroll-container" id="gallery">
 
 <div class="gallery-item"><img src="pubertyimg/pg1.jpg"></div>
 <div class="gallery-item"><img src="pubertyimg/pg2.jpg"></div>
 <div class="gallery-item"><img src="pubertyimg/pg3.jpg"></div>
 <div class="gallery-item"><img src="pubertyimg/pg4.jpg"></div>
+
+</div>
+
+<button class="scroll-btn scroll-right" onclick="scrollGallery(300)">❯</button>
 
 </div>
 
@@ -271,7 +348,7 @@ grid-template-columns:1fr;
 <div class="section-box">
 <h2>Majestic Decor & Ambiance</h2>
 <p>
-Our Gold decor package transforms the venue into a majestic traditional setting that beautifully honors this important milestone in a young girl's life. The stage is designed with a grand floral backdrop using premium fresh flowers, elegant garlands, and traditional leaf hangings that reflect the cultural significance of the Manjal Neerattu Vizha. Carefully arranged lighting enhances the colors and textures of the décor, creating a warm and welcoming atmosphere for family and guests. Every detail of the setup is thoughtfully curated to blend tradition with elegance, ensuring the celebration feels both sacred and visually breathtaking.
+Our Gold décor package transforms the venue into a majestic traditional setting that reflects the beauty and cultural importance of the puberty ceremony. The stage features a luxurious floral backdrop crafted with fresh premium flowers, decorative garlands, and traditional banana leaf arrangements. Warm ambient lighting enhances every element of the décor, creating a rich and festive environment for family and guests. Every design detail is carefully curated to combine elegance, tradition, and visual grandeur, ensuring the ceremony feels truly special.
 </p>
 </div>
 
@@ -279,7 +356,7 @@ Our Gold decor package transforms the venue into a majestic traditional setting 
 <div class="section-box">
 <h2>Live Nathasvaram & Artistry</h2>
 <p>
-To enrich the spiritual and cultural ambiance of the ceremony, our Gold package includes a live Nathasvaram and Thavil performance that fills the venue with traditional melodies. These auspicious instruments create a vibrant atmosphere and elevate the emotional significance of each ritual moment. Complementing the musical experience is our premium makeup and styling service, designed specifically for this special occasion. Our expert artists craft a graceful and radiant look that highlights natural beauty while maintaining the elegance of traditional attire, ensuring the young lady looks confident and stunning throughout the celebration.
+To elevate the spiritual atmosphere of the ceremony, the Gold package includes a live Nathasvaram and Thavil performance performed by experienced traditional musicians. Their auspicious melodies create a sacred and celebratory ambiance throughout the rituals. In addition, our professional makeup and styling team ensures the young girl looks radiant and graceful. The styling is designed to highlight natural beauty while perfectly complementing traditional attire and jewelry for this important cultural event.
 </p>
 </div>
 
@@ -287,7 +364,7 @@ To enrich the spiritual and cultural ambiance of the ceremony, our Gold package 
 <div class="section-box">
 <h2>Cinematic Photography</h2>
 <p>
-To enrich the spiritual and cultural ambiance of the ceremony, our Gold package includes a live Nathasvaram and Thavil performance that fills the venue with traditional melodies. These auspicious instruments create a vibrant atmosphere and elevate the emotional significance of each ritual moment. Complementing the musical experience is our premium makeup and styling service, designed specifically for this special occasion. Our expert artists craft a graceful and radiant look that highlights natural beauty while maintaining the elegance of traditional attire, ensuring the young lady looks confident and stunning throughout the celebration.
+Our cinematic photography service ensures every precious moment of the ceremony is beautifully preserved. Professional photographers capture candid emotions, rituals, and family celebrations using modern cinematic techniques. A highlight video is created to tell the story of the day with elegance and creativity. High-resolution edited photos and videos allow you to relive these special memories for years to come, turning your celebration into a timeless visual experience.
 </p>
 </div>
 
@@ -295,7 +372,7 @@ To enrich the spiritual and cultural ambiance of the ceremony, our Gold package 
 <div class="section-box">
 <h2>Grand Catering & Invitations</h2>
 <p>
-Designed to accommodate large celebrations of more than 200 guests, our grand catering service offers a rich variety of authentic South Indian delicacies prepared with the finest ingredients. Every dish is carefully planned to reflect traditional flavors while ensuring a delightful dining experience for your guests. From welcome refreshments to a complete festive meal, the catering service adds warmth and hospitality to your event. To complement the grandeur of the celebration, we also provide elegantly designed manual invitations that are personally delivered, creating a sense of respect and importance for every guest invited to this special occasion.
+The Gold package includes a grand catering service specially designed for large gatherings of more than 200 guests. Guests are served a delicious selection of authentic South Indian dishes prepared using fresh ingredients and traditional recipes. From welcome drinks to a complete festive meal, every dish is carefully curated to provide a memorable dining experience. Elegant manual invitations are also designed and personally delivered to invite guests with dignity and traditional charm.
 </p>
 </div>
 
@@ -303,24 +380,31 @@ Designed to accommodate large celebrations of more than 200 guests, our grand ca
 <div class="section-box">
 <h2>Complimentary Signature Gifts</h2>
 <p>
-As part of our commitment to making your celebration even more memorable, we include thoughtfully curated complimentary elements in the Gold package. Two additional Seeru Thattu are artistically arranged to enhance the beauty of the ritual display and enrich the traditional significance of the ceremony. In addition, we create a custom digital video invitation that allows you to share your celebration with friends and relatives through modern platforms, blending tradition with contemporary convenience.
+To make the celebration even more meaningful, our Gold package includes special complimentary elements. Two beautifully arranged Seeru Thattu displays are added to enrich the traditional ceremony setup and enhance the visual presentation. Additionally, a professionally designed digital video invitation is created for easy sharing with friends and relatives through modern platforms. These thoughtful additions blend tradition with convenience, making your celebration even more memorable.
 </p>
 </div>
 
 
-<button class="book-btn" onclick="openModal()">BOOK NOW</button>
+<button class="book-btn" onclick="openBooking()">BOOK NOW</button>
 
 </div>
 
 
+<!-- IMAGE VIEW MODAL -->
+
+<div id="imgModal" class="modal">
+<span class="close">&times;</span>
+<img id="modalImg">
+</div>
+
 
 <!-- BOOKING MODAL -->
 
-<div id="bookingModal" class="modal">
+<div id="bookingModal" class="booking-modal">
 
 <div class="modal-content">
 
-<span class="close-btn" onclick="closeModal()">&times;</span>
+<span class="close-btn" onclick="closeBooking()">&times;</span>
 
 <h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
 Book Gold Puberty Package
@@ -364,25 +448,68 @@ Book Gold Puberty Package
 </div>
 
 
-
 <script>
 
-function openModal(){
-document.getElementById("bookingModal").style.display="block";
+/* GALLERY SCROLL */
+
+function scrollGallery(amount){
+document.getElementById("gallery").scrollBy({
+left:amount,
+behavior:"smooth"
+})
 }
 
-function closeModal(){
-document.getElementById("bookingModal").style.display="none";
+/* IMAGE MODAL */
+
+let modal=document.getElementById("imgModal")
+let modalImg=document.getElementById("modalImg")
+
+document.querySelectorAll(".gallery-item img").forEach((img,index)=>{
+
+img.onclick=function(){
+modal.style.display="flex"
+modalImg.src=this.src
+currentIndex=index
 }
 
-window.onclick=function(event){
+})
 
-let modal=document.getElementById("bookingModal");
-
-if(event.target==modal){
-modal.style.display="none";
+document.querySelector(".close").onclick=function(){
+modal.style.display="none"
 }
 
+/* KEYBOARD NAVIGATION */
+
+let images=document.querySelectorAll(".gallery-item img")
+let currentIndex=0
+
+document.addEventListener("keydown",function(e){
+
+if(modal.style.display==="flex"){
+
+if(e.key==="ArrowRight"){
+currentIndex=(currentIndex+1)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+if(e.key==="ArrowLeft"){
+currentIndex=(currentIndex-1+images.length)%images.length
+modalImg.src=images[currentIndex].src
+}
+
+}
+
+})
+
+
+/* BOOKING MODAL */
+
+function openBooking(){
+document.getElementById("bookingModal").style.display="block"
+}
+
+function closeBooking(){
+document.getElementById("bookingModal").style.display="none"
 }
 
 </script>

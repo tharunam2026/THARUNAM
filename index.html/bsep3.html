@@ -16,7 +16,7 @@ color:#333;
 line-height:1.6;
 }
 
-/* Navbar */
+/* NAVBAR */
 
 .navbar{
 background:#8d0809;
@@ -43,7 +43,7 @@ background:white;
 color:#8d0809;
 }
 
-/* Hero */
+/* HERO */
 
 .hero-section{
 background:white;
@@ -72,7 +72,7 @@ font-weight:bold;
 margin-bottom:20px;
 }
 
-/* Content */
+/* CONTENT */
 
 .details-container{
 padding:40px 10%;
@@ -94,7 +94,7 @@ border-bottom:1px solid #eee;
 padding-bottom:10px;
 }
 
-/* Gallery */
+/* GALLERY */
 
 .gallery-scroll-container{
 display:flex;
@@ -104,21 +104,91 @@ padding:10px 0 20px 0;
 scroll-behavior:smooth;
 }
 
+/* Visible Scrollbar */
+
+.gallery-scroll-container::-webkit-scrollbar{
+height:8px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-track{
+background:#eee;
+border-radius:10px;
+}
+
+.gallery-scroll-container::-webkit-scrollbar-thumb{
+background:#8d0809;
+border-radius:10px;
+}
+
 .gallery-item{
 flex:0 0 280px;
 height:200px;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 4px 8px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .gallery-item img{
 width:100%;
 height:100%;
 object-fit:cover;
+transition:0.4s;
 }
 
-/* Button */
+.gallery-item:hover img{
+transform:scale(1.08);
+}
+
+/* FULLSCREEN VIEWER */
+
+.viewer{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+z-index:3000;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+}
+
+.viewer img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+animation:zoom 0.4s;
+}
+
+@keyframes zoom{
+from{transform:scale(0.8);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
+
+.close{
+position:absolute;
+top:25px;
+right:40px;
+color:white;
+font-size:40px;
+cursor:pointer;
+}
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+color:white;
+font-size:55px;
+cursor:pointer;
+}
+
+.arrow-left{left:30px;}
+.arrow-right{right:30px;}
+
+/* BOOK BUTTON */
 
 .book-btn{
 display:block;
@@ -127,7 +197,6 @@ margin:40px auto;
 padding:15px;
 background:#8d0809;
 color:white;
-text-align:center;
 font-size:1.2rem;
 font-weight:bold;
 border:none;
@@ -135,7 +204,7 @@ border-radius:6px;
 cursor:pointer;
 }
 
-/* Modal */
+/* MODAL */
 
 .modal{
 display:none;
@@ -167,7 +236,7 @@ cursor:pointer;
 color:#8d0809;
 }
 
-/* Form */
+/* FORM */
 
 .form-group{
 margin-bottom:15px;
@@ -199,9 +268,8 @@ cursor:pointer;
 }
 
 @media(max-width:768px){
-.hero-section{
-grid-template-columns:1fr;
-}
+.hero-section{grid-template-columns:1fr;}
+.arrow{font-size:40px;}
 }
 
 </style>
@@ -216,7 +284,7 @@ grid-template-columns:1fr;
 <section class="hero-section">
 
 <div>
-<img src="epimage/cc.png" alt="Cradle Ceremony Setup" class="hero-img">
+<img src="epimage/cc.png" class="hero-img">
 </div>
 
 <div class="package-title">
@@ -224,7 +292,9 @@ grid-template-columns:1fr;
 <h1>Cradle Ceremony</h1>
 <p class="price-tag">₹8,999 Onwards</p>
 
-<p>Celebrate your baby's naming ceremony with a beautifully decorated cradle and a traditional atmosphere. Our package focuses on welcoming your little one with grace and joy.</p>
+<p>
+Celebrate the beautiful moment of welcoming your newborn with a traditional cradle ceremony designed with elegance and warmth. Our thoughtfully crafted setup blends cultural rituals with artistic décor to create a joyful and meaningful celebration. The beautifully adorned cradle becomes the centerpiece where family gathers to bless the baby. Every detail is curated to transform this sacred occasion into a cherished family memory.
+</p>
 
 <p>• Decorated Traditional Cradle</p>
 <p>• Floral Stage Backdrop</p>
@@ -240,7 +310,6 @@ grid-template-columns:1fr;
 <div class="details-container">
 
 <div class="section-box">
-
 <h2>Gallery</h2>
 
 <div class="gallery-scroll-container">
@@ -249,70 +318,80 @@ grid-template-columns:1fr;
 <div class="gallery-item"><img src="epimage/cc2.jpg"></div>
 <div class="gallery-item"><img src="epimage/cc3.png"></div>
 <div class="gallery-item"><img src="epimage/ff4.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/pd3.jpg"></div>
 
 </div>
-
 </div>
 
 <div class="section-box">
-
 <h2>The Grand Cradle Setup</h2>
-
-<p>The centerpiece of the event is our beautifully decorated cradle. We provide elegant draping, floral garlands, and soft bedding so the baby remains comfortable throughout the ceremony.</p>
-
+<p>
+The heart of the ceremony is a beautifully decorated cradle designed with elegant drapes, soft fabrics, and fresh floral garlands. This centerpiece is thoughtfully arranged to create a serene and divine space where the baby is introduced to family and loved ones. The cradle setup ensures comfort for the baby while also providing a visually stunning focal point for photographs and blessings.
+</p>
 </div>
 
 <div class="section-box">
-
 <h2>Naming Ritual & Decor</h2>
-
-<p>We arrange a sacred space for the naming ceremony with themed backdrops, ritual plates, and traditional decorative elements. A personalized welcome board greets guests and highlights the baby's special day.</p>
-
+<p>
+A sacred ritual space is arranged for the naming ceremony with traditional décor elements and themed backdrops. Ritual plates, decorative lamps, and floral arrangements enhance the spiritual atmosphere of the event. A personalized welcome board greets guests and highlights the baby’s special day, adding a meaningful touch to the celebration.
+</p>
 </div>
 
 <div class="section-box">
-
 <h2>Traditional Music & Atmosphere</h2>
-
-<p>Soft instrumental music and decorative lighting enhance the celebration. Traditional lamps, floral arrangements, and themed props make the stage perfect for photographs.</p>
-
+<p>
+Soft instrumental music fills the venue creating a calm and joyful environment for the ceremony. Elegant lighting arrangements combined with traditional décor pieces such as brass lamps and floral accents transform the stage into a beautiful and welcoming celebration space for family and guests.
+</p>
 </div>
 
 <div class="section-box">
-
 <h2>Photography Coverage</h2>
-
-<p>Professional photographers capture the baby's cradle moments, naming ritual, and beautiful family portraits in high-definition to preserve every precious memory.</p>
-
+<p>
+Professional photographers capture every heartfelt moment of the cradle ceremony including the naming ritual, family blessings, and candid smiles. High-definition photographs ensure that these once-in-a-lifetime memories are preserved beautifully for years to come.
+</p>
 </div>
 
 <div class="section-box">
-
 <h2>Cake Celebration</h2>
-
-<p>A special cake table setup is provided to celebrate the milestone. Families can customize the cake according to their preference while the table decor matches the ceremony theme.</p>
-
+<p>
+A beautifully styled cake table setup adds a joyful celebration moment to the ceremony. Families can customize the cake design according to their theme while the decorative table arrangement complements the event décor perfectly.
+</p>
 </div>
 
 <div class="section-box">
-
 <h2>Complimentary Inclusions</h2>
-
-<p>The package includes a customized digital invitation and a small dessert table arrangement for guests to enjoy during the celebration.</p>
-
+<p>
+To make the celebration even more special, the package includes a customized digital invitation along with elegant decorative elements for the event. These thoughtful additions enhance the overall experience and ensure a smooth and memorable celebration.
+</p>
 </div>
 
 <button class="book-btn" onclick="openModal()">BOOK NOW</button>
 
 </div>
 
-<!-- Modal -->
+
+<!-- IMAGE VIEWER -->
+
+<div class="viewer" id="viewer">
+
+<span class="close" onclick="closeViewer()">×</span>
+
+<div class="arrow arrow-left" onclick="prevImage()">❮</div>
+
+<img id="viewerImg">
+
+<div class="arrow arrow-right" onclick="nextImage()">❯</div>
+
+</div>
+
+
+<!-- BOOKING MODAL -->
 
 <div id="bookingModal" class="modal">
 
 <div class="modal-content">
 
-<span class="close-btn" onclick="closeModal()">&times;</span>
+<span class="close-btn" onclick="closeModal()">×</span>
 
 <h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
 Book Cradle Ceremony
@@ -353,22 +432,68 @@ Book Cradle Ceremony
 </form>
 
 </div>
-
 </div>
+
 
 <script>
 
+/* GALLERY VIEWER */
+
+let images=document.querySelectorAll(".gallery-item img")
+let viewer=document.getElementById("viewer")
+let viewerImg=document.getElementById("viewerImg")
+let index=0
+
+images.forEach((img,i)=>{
+img.onclick=function(){
+viewer.style.display="flex"
+viewerImg.src=this.src
+index=i
+}
+})
+
+function closeViewer(){
+viewer.style.display="none"
+}
+
+function nextImage(){
+index=(index+1)%images.length
+viewerImg.src=images[index].src
+}
+
+function prevImage(){
+index=(index-1+images.length)%images.length
+viewerImg.src=images[index].src
+}
+
+/* MOBILE SWIPE */
+
+let startX=0
+
+viewer.addEventListener("touchstart",e=>{
+startX=e.touches[0].clientX
+})
+
+viewer.addEventListener("touchend",e=>{
+let endX=e.changedTouches[0].clientX
+
+if(startX-endX>50){nextImage()}
+if(endX-startX>50){prevImage()}
+})
+
+/* BOOKING MODAL */
+
 function openModal(){
-document.getElementById("bookingModal").style.display="block";
+document.getElementById("bookingModal").style.display="block"
 }
 
 function closeModal(){
-document.getElementById("bookingModal").style.display="none";
+document.getElementById("bookingModal").style.display="none"
 }
 
 window.onclick=function(event){
 if(event.target==document.getElementById("bookingModal")){
-closeModal();
+closeModal()
 }
 }
 

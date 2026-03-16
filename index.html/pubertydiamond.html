@@ -1,9 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Diamond Puberty Ceremony - Tharunam</title>
 
 <style>
@@ -21,7 +21,7 @@ color:#333;
 line-height:1.6;
 }
 
-/* Navbar */
+/* NAVBAR */
 
 .navbar{
 background:#8d0809;
@@ -48,7 +48,7 @@ background:white;
 color:#8d0809;
 }
 
-/* Hero Section */
+/* HERO */
 
 .hero-section{
 background:white;
@@ -77,7 +77,7 @@ font-weight:bold;
 margin-bottom:20px;
 }
 
-/* Content */
+/* CONTENT */
 
 .details-container{
 padding:40px 10%;
@@ -99,14 +99,18 @@ border-bottom:1px solid #eee;
 padding-bottom:10px;
 }
 
-/* Gallery */
+/* GALLERY */
 
 .gallery-scroll-container{
 display:flex;
 overflow-x:auto;
 gap:20px;
-padding:10px 0 20px 0;
+padding:10px 0 20px;
 scroll-behavior:smooth;
+}
+
+.gallery-scroll-container::-webkit-scrollbar{
+display:none;
 }
 
 .gallery-item{
@@ -115,6 +119,7 @@ height:200px;
 border-radius:10px;
 overflow:hidden;
 box-shadow:0 4px 8px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .gallery-item img{
@@ -123,7 +128,7 @@ height:100%;
 object-fit:cover;
 }
 
-/* Button */
+/* BOOK BUTTON */
 
 .book-btn{
 display:block;
@@ -139,7 +144,7 @@ border-radius:6px;
 cursor:pointer;
 }
 
-/* Modal */
+/* MODAL */
 
 .modal{
 display:none;
@@ -171,7 +176,7 @@ cursor:pointer;
 color:#8d0809;
 }
 
-/* Form */
+/* FORM */
 
 .form-group{
 margin-bottom:15px;
@@ -186,10 +191,10 @@ margin-bottom:5px;
 
 .form-group input,
 .form-group textarea{
-width:100%;
 padding:10px;
 border:1px solid #ccc;
 border-radius:5px;
+width:100%;
 }
 
 .submit-btn{
@@ -204,7 +209,57 @@ cursor:pointer;
 margin-top:10px;
 }
 
-/* Mobile */
+/* IMAGE VIEWER */
+
+.image-viewer{
+display:none;
+position:fixed;
+z-index:3000;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+align-items:center;
+justify-content:center;
+}
+
+.image-viewer img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+animation:zoomIn .3s ease;
+}
+
+@keyframes zoomIn{
+from{transform:scale(.7);}
+to{transform:scale(1);}
+}
+
+.close-viewer{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.prev{left:30px;}
+.next{right:30px;}
+
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -235,13 +290,15 @@ grid-template-columns:1fr;
 
 <p class="price-tag">₹1,50,000 Onwards</p>
 
-<p>The pinnacle of grand celebrations. Our Diamond package is a masterpiece of luxury, featuring cinematic entries, celebrity-grade artistry, and elite banquet experiences.</p>
+<p>
+The Diamond package represents the highest level of celebration, designed for families who desire a truly royal and unforgettable Manjal Neerattu Vizha. From grand stage production to cinematic ceremonial entries, every moment is crafted to create a luxurious and emotionally powerful experience.
+</p>
 
 <p>• Elite Grand Stage & Designer Backdrop</p>
 <p>• Smoke & Fire Sparkle Cinematic Entry</p>
 <p>• Professional Welcome Dance Troupe</p>
 <p>• High-Definition Celebrity Makeup</p>
-<p>• Live DJ & Professional Sound System</p>
+<p>• Live DJ & Premium Sound System</p>
 <p>• Luxury Buffet Catering (500+ Guests)</p>
 
 </div>
@@ -260,41 +317,82 @@ grid-template-columns:1fr;
 <div class="gallery-item"><img src="pubertyimg/pd2.jpg"></div>
 <div class="gallery-item"><img src="pubertyimg/pd3.jpg"></div>
 <div class="gallery-item"><img src="images/bd5.jpg"></div>
+<div class="gallery-item"><img src="epimage/boquet.jpg"></div>
+<div class="gallery-item"><img src="epimage/polaroid.jpg"></div>
+<div class="gallery-item"><img src="epimage/tqcard.jpeg"></div>
+<div class="gallery-item"><img src="epimage/photographer.jpg"></div>
+<div class="gallery-item"><img src="epimage/Birthday board.jpg"></div>
 
 </div>
 
+</div>
+
+<div class="details-container">
+
+<div class="section-box">
+<h2>Event Decor Details</h2>
+<p>
+Transform your grand opening into a breathtaking celebration with our premium stage decor and luxury event styling. 
+Our team designs elegant backdrops, themed entrances, LED lighting effects, and grand floral arrangements to create a 
+picture-perfect ambiance that reflects your brand and celebration style. From corporate launches to premium store openings 
+and destination celebrations, every design element is carefully crafted to deliver a visually stunning experience.
+</p>
 </div>
 
 <div class="section-box">
-<h2>Grand Backdrop & Stage Production</h2>
-<p>Step into a world of luxury with our elite stage decor featuring a bespoke designer backdrop tailored to your family's celebration style. With 21+ beautifully arranged Seeru Thattu and grand floral artistry, the stage becomes a perfect visual centerpiece for both rituals and photography.</p>
+<h2>Destination Event Planning</h2>
+<p>
+Planning an event outside your city? We specialize in destination event planning, managing everything from venue 
+selection and guest experience to décor setup and entertainment coordination. Our professional team ensures that 
+your celebration is executed flawlessly while maintaining luxury standards and seamless event flow.
+</p>
 </div>
 
 <div class="section-box">
-<h2>The Cinematic Entry</h2>
-<p>Experience a breathtaking ceremonial entry with professional dance performers combined with smoke effects and cold fire sparklers. This dramatic production creates an unforgettable moment for the star of the celebration and leaves guests amazed.</p>
+<h2>Catering & Multi-Cuisine Experience</h2>
+<p>
+Delight your guests with our premium catering services featuring multiple cuisines prepared by expert chefs. 
+From traditional Indian delicacies to international dishes, our menu includes a wide variety of vegetarian and 
+non-vegetarian options. Live food stalls, snack counters, and beverage stations add an interactive dining experience 
+that keeps guests engaged throughout the celebration.
+</p>
 </div>
 
 <div class="section-box">
-<h2>Elite Artistry & Entertainment</h2>
-<p>Our celebrity-level makeup artists ensure a flawless HD look throughout the ceremony. A professional DJ and premium sound system provide lively entertainment, blending traditional music with modern celebratory beats.</p>
+<h2>Professional Photography & Videography</h2>
+<p>
+Capture every important moment with our professional photography and cinematic videography team. Using 
+high-end cameras, creative lighting setups, and cinematic editing techniques, we ensure every highlight of your 
+event is beautifully documented. We also provide live photo booths and instant photo print stations for guests 
+to enjoy and create lasting memories.
+</p>
 </div>
 
 <div class="section-box">
-<h2>Grand Feast & Invitations</h2>
-<p>Host a magnificent dining experience with our luxury buffet catering crafted for gatherings of 500+ guests. Premium invitation cards are also provided to ensure your celebration begins with elegance and prestige.</p>
+<h2>Makeup Artists & Styling</h2>
+<p>
+Look your absolute best on your special day with our expert makeup artists and styling professionals. 
+From natural elegant looks to glamorous event styling, our team ensures that every host and performer 
+is perfectly prepared for the spotlight.
+</p>
 </div>
 
 <div class="section-box">
-<h2>Complimentary Signature Gifts</h2>
-<p>Enjoy a cinematic highlight video of the celebration, a custom digital invitation video, and a personalized grand welcome poster featuring the guest of honor.</p>
+<h2>Entertainment & Guest Engagement</h2>
+<p>
+Keep the celebration lively with exciting entertainment options including DJs, dance floor setups, mascots, 
+live performers, and interactive activities. Our entertainment arrangements are designed to energize the crowd 
+and create an unforgettable festive atmosphere for every guest attending the event.
+</p>
+</div>
+
 </div>
 
 <button class="book-btn" onclick="openModal()">BOOK NOW</button>
 
 </div>
 
-<!-- Booking Modal -->
+<!-- BOOKING MODAL -->
 
 <div id="bookingModal" class="modal">
 
@@ -313,12 +411,12 @@ Book Diamond Puberty Package
 
 <div class="form-group">
 <label>Full Name *</label>
-<input type="text" name="name" placeholder="Enter your name" required>
+<input type="text" name="name" required>
 </div>
 
 <div class="form-group">
 <label>Phone Number *</label>
-<input type="tel" name="phone" placeholder="Your contact number" required>
+<input type="tel" name="phone" required>
 </div>
 
 <div class="form-group">
@@ -328,12 +426,12 @@ Book Diamond Puberty Package
 
 <div class="form-group">
 <label>Location</label>
-<input type="text" name="location" placeholder="Venue Address">
+<input type="text" name="location">
 </div>
 
 <div class="form-group">
-<label>Event Details *</label>
-<textarea name="event_details" rows="4" placeholder="Tell us about your event"></textarea>
+<label>Event Details</label>
+<textarea name="event_details" rows="4"></textarea>
 </div>
 
 <button type="submit" class="submit-btn">SEND ENQUIRY</button>
@@ -341,10 +439,55 @@ Book Diamond Puberty Package
 </form>
 
 </div>
+</div>
+
+<!-- FULLSCREEN IMAGE VIEWER -->
+
+<div id="imageViewer" class="image-viewer">
+
+<span class="close-viewer" onclick="closeViewer()">×</span>
+
+<img id="viewerImage">
+
+<button class="nav-btn prev" onclick="prevImage()">❮</button>
+<button class="nav-btn next" onclick="nextImage()">❯</button>
 
 </div>
 
 <script>
+
+let images=document.querySelectorAll('.gallery-item img');
+let currentIndex=0;
+
+images.forEach((img,index)=>{
+
+img.addEventListener("click",()=>{
+
+document.getElementById("imageViewer").style.display="flex";
+document.getElementById("viewerImage").src=img.src;
+currentIndex=index;
+
+});
+
+});
+
+function closeViewer(){
+document.getElementById("imageViewer").style.display="none";
+}
+
+function nextImage(){
+currentIndex++;
+if(currentIndex>=images.length){currentIndex=0;}
+document.getElementById("viewerImage").src=images[currentIndex].src;
+}
+
+function prevImage(){
+currentIndex--;
+if(currentIndex<0){currentIndex=images.length-1;}
+document.getElementById("viewerImage").src=images[currentIndex].src;
+}
+
+/* Booking Modal */
 
 function openModal(){
 document.getElementById("bookingModal").style.display="block";
@@ -352,16 +495,6 @@ document.getElementById("bookingModal").style.display="block";
 
 function closeModal(){
 document.getElementById("bookingModal").style.display="none";
-}
-
-window.onclick=function(event){
-
-let modal=document.getElementById("bookingModal");
-
-if(event.target==modal){
-modal.style.display="none";
-}
-
 }
 
 </script>

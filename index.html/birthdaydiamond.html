@@ -3,11 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Platinum Birthday Details - Tharunam</title>
+
+<title>Diamond Birthday Package - Tharunam</title>
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
 
 body{
 background:#fdf2f2;
@@ -32,9 +38,9 @@ z-index:1000;
 color:white;
 text-decoration:none;
 border:1px solid white;
-padding:5px 15px;
-border-radius:20px;
-transition:0.3s;
+padding:6px 18px;
+border-radius:25px;
+transition:.3s;
 }
 
 .back-btn:hover{
@@ -49,29 +55,33 @@ background:white;
 padding:40px 10%;
 display:grid;
 grid-template-columns:1.5fr 1fr;
-gap:30px;
+gap:40px;
 }
 
 .hero-img{
 width:100%;
-border-radius:10px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
 .package-title h1{
-color:#506266;
-font-size:2.5rem;
+color:#8d0809;
+font-size:2.6rem;
 margin-bottom:10px;
 }
 
 .price-tag{
-font-size:1.5rem;
-color:#708090;
+font-size:1.6rem;
+color:#444;
 font-weight:bold;
 margin-bottom:20px;
 }
 
-/* Content */
+.package-title p{
+margin-bottom:8px;
+}
+
+/* Sections */
 
 .details-container{
 padding:40px 10%;
@@ -83,7 +93,7 @@ padding:30px;
 border-radius:10px;
 margin-bottom:30px;
 border-left:5px solid #8d0809;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
 .section-box h2{
@@ -99,17 +109,8 @@ padding-bottom:10px;
 display:flex;
 overflow-x:auto;
 gap:20px;
-padding:10px 0 20px 0;
+padding:10px 0 20px;
 scroll-behavior:smooth;
-}
-
-.gallery-scroll-container::-webkit-scrollbar{
-height:8px;
-}
-
-.gallery-scroll-container::-webkit-scrollbar-thumb{
-background:#8d0809;
-border-radius:10px;
 }
 
 .gallery-item{
@@ -117,21 +118,21 @@ flex:0 0 280px;
 height:200px;
 border-radius:10px;
 overflow:hidden;
-box-shadow:0 4px 8px rgba(0,0,0,0.1);
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .gallery-item img{
 width:100%;
 height:100%;
 object-fit:cover;
-display:block;
 }
 
-/* Button */
+/* Book Button */
 
 .book-btn{
 display:block;
-width:300px;
+width:320px;
 margin:40px auto;
 padding:15px;
 background:#8d0809;
@@ -140,7 +141,7 @@ text-align:center;
 font-size:1.2rem;
 font-weight:bold;
 border:none;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
 }
 
@@ -155,12 +156,11 @@ top:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.7);
-overflow-y:auto;
 }
 
 .modal-content{
 background:white;
-margin:5% auto;
+margin:6% auto;
 padding:30px;
 border-radius:10px;
 width:90%;
@@ -172,7 +172,7 @@ position:relative;
 position:absolute;
 right:20px;
 top:10px;
-font-size:2rem;
+font-size:28px;
 cursor:pointer;
 color:#8d0809;
 }
@@ -186,13 +186,12 @@ flex-direction:column;
 }
 
 .form-group label{
-margin-bottom:5px;
 font-weight:bold;
+margin-bottom:5px;
 }
 
 .form-group input,
 .form-group textarea{
-width:100%;
 padding:10px;
 border:1px solid #ccc;
 border-radius:5px;
@@ -209,12 +208,62 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* Responsive */
+/* Full Screen Viewer */
+
+.image-viewer{
+display:none;
+position:fixed;
+z-index:3000;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+align-items:center;
+justify-content:center;
+}
+
+.image-viewer img{
+max-width:90%;
+max-height:85%;
+border-radius:10px;
+animation:zoomIn .3s ease;
+}
+
+@keyframes zoomIn{
+from{transform:scale(.7);}
+to{transform:scale(1);}
+}
+
+.close-viewer{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.prev{left:30px;}
+.next{right:30px;}
 
 @media(max-width:768px){
+
 .hero-section{
 grid-template-columns:1fr;
 }
+
 }
 
 </style>
@@ -229,28 +278,28 @@ grid-template-columns:1fr;
 <section class="hero-section">
 
 <div>
-<img src="images/birthdayplatinum.png" alt="Platinum Decor" class="hero-img">
+<img src="images/birthdaydiamound.png" class="hero-img">
 </div>
 
 <div class="package-title">
 
-<h1>Platinum Birthday Package</h1>
+<h1>Diamond Birthday Package</h1>
 
-<p class="price-tag">₹10,000 Onwards</p>
+<p class="price-tag">₹15,000 Onwards</p>
 
 <p>
-Experience a grand celebration with our Platinum tier. This elite package features high-end thematic decorations, professional coverage, and personalized touches to make your day unforgettable.
+Celebrate your special day with the ultimate luxury experience through our Diamond Birthday Package. Designed for grand celebrations, this premium setup blends elegant décor, professional photography, and personalized elements to create a visually stunning celebration. Every detail is crafted with sophistication to deliver unforgettable moments for you and your guests. With exclusive complimentary services and high-end decorations, your birthday becomes a truly remarkable event.
 </p>
 
-<p>Customized Backdrop Setup -1</p>
-<p>3kg Designer Cake -1</p>
-<p>Professional Photographer -1</p>
-<p>Customized Name Board -1</p>
-<p>Fairy Light & Focus Lights -1</p>
-<p>Video Invitation (Complementary) -1</p>
-<p>Bouquet (Complementary) -1</p>
-<p>15 Photo Polaroids (Complementary) -1</p>
-<p>15 Thank-You Cards (Complementary) -1</p>
+<p>Luxury Customized Theme Backdrop - 1</p>
+<p>3kg Premium Designer Cake - 1</p>
+<p>Professional Photographer & Event Coverage - 1</p>
+<p>Customized LED Name Board - 1</p>
+<p>Fairy Lights & Stage Focus Lighting - 1</p>
+<p>Premium Flower Bouquet - 1</p>
+<p>20 Instant Polaroid Photos - 1</p>
+<p>HD Video Invitation (Complementary)</p>
+<p>20 Personalized Thank-You Cards (Complementary)</p>
 
 </div>
 
@@ -260,21 +309,19 @@ Experience a grand celebration with our Platinum tier. This elite package featur
 
 <div class="section-box">
 
-<h2>Platinum Gallery</h2>
+<h2>Diamond Gallery</h2>
 
 <div class="gallery-scroll-container">
 
-<div class="gallery-item">
-<img src="images/bp1.png">
-</div>
-
-<div class="gallery-item">
-<img src="images/bp2.png">
-</div>
-
-<div class="gallery-item">
-<img src="images/bp3.png">
-</div>
+<div class="gallery-item"><img src="images/bd1.png"></div>
+<div class="gallery-item"><img src="images/bd2.png"></div>
+<div class="gallery-item"><img src="images/bd3.png"></div>
+<div class="gallery-item"><img src="images/bd4.png"></div>
+<div class="gallery-item"><img src="images/bd5.jpg"></div>
+<div class="gallery-item"><img src="epimage/polaroid.jpg"></div>
+<div class="gallery-item"><img src="epimage/tqcard.jpeg"></div>
+<div class="gallery-item"><img src="epimage/photographer.jpg"></div>
+<div class="gallery-item"><img src="epimage/Birthday  board.jpg"></div>
 
 </div>
 
@@ -282,30 +329,30 @@ Experience a grand celebration with our Platinum tier. This elite package featur
 
 <div class="section-box">
 
-<h2>Main Services</h2>
+<h2>Decoration Experience</h2>
 
 <p>
-Our Platinum decor features a majestic multi-layered backdrop integrated with professional stage lighting and shimmering metallic accents. A dedicated professional photographer captures every moment of the celebration.
+Our Diamond setup features a grand multi-layer luxury backdrop enhanced with premium balloon styling, LED focus lighting, and elegant stage arrangements that transform your venue into a spectacular celebration space.
 </p>
 
 </div>
 
 <div class="section-box">
 
-<h2>Cake Details</h2>
+<h2>Cake & Celebration Highlights</h2>
 
 <p>
-The centerpiece is a grand 3kg designer cake, fully customizable to match your chosen theme and color palette, finished with a bespoke acrylic name topper.
+A premium 3kg designer cake crafted by professional bakers serves as the centerpiece of the celebration, customizable to match your theme, color palette, and personal style.
 </p>
 
 </div>
 
 <div class="section-box">
 
-<h2>Complementary Services</h2>
+<h2>Exclusive Complimentary Services</h2>
 
 <p>
-We include a professionally designed video invitation, 15 instant polaroid memories, a fresh flower bouquet, and personalized thank-you cards for your guests.
+Enjoy complimentary HD video invitations, instant polaroid memories, premium bouquets, and personalized thank-you cards that make your event feel truly special and memorable.
 </p>
 
 </div>
@@ -314,29 +361,32 @@ We include a professionally designed video invitation, 15 instant polaroid memor
 
 </div>
 
+
+<!-- Booking Modal -->
+
 <div id="bookingModal" class="modal">
 
 <div class="modal-content">
 
-<span class="close-btn" onclick="closeModal()">&times;</span>
+<span class="close-btn" onclick="closeModal()">×</span>
 
 <h2 style="color:#8d0809;text-align:center;margin-bottom:20px;">
-Book Your Platinum Event
+Book Your Diamond Event
 </h2>
 
 <form action="https://formspree.io/f/maqpeyej" method="POST">
 
 <input type="hidden" name="event_type" value="Birthday">
-<input type="hidden" name="package_type" value="Platinum">
+<input type="hidden" name="package_type" value="Diamond">
 
 <div class="form-group">
 <label>Full Name *</label>
-<input type="text" name="name" placeholder="Enter your name" required>
+<input type="text" name="name" required>
 </div>
 
 <div class="form-group">
 <label>Phone Number *</label>
-<input type="tel" name="phone" placeholder="Your contact number" required>
+<input type="tel" name="phone" required>
 </div>
 
 <div class="form-group">
@@ -346,29 +396,121 @@ Book Your Platinum Event
 
 <div class="form-group">
 <label>Location</label>
-<input type="text" name="location" placeholder="Venue Address">
+<input type="text" name="location">
 </div>
 
 <div class="form-group">
-<label>Event Details *</label>
-<textarea name="event_details" rows="4" placeholder="Tell us about your event"></textarea>
+<label>Event Details</label>
+<textarea name="event_details" rows="4"></textarea>
 </div>
 
 <button type="submit" class="submit-btn">SEND ENQUIRY</button>
 
 </form>
 
-<hr style="margin:20px 0;">
+<hr style="margin:20px 0">
 
-<p style="text-align:center;font-size:0.9rem;">
+<p style="text-align:center;font-size:.9rem">
 <b>Contact Us:</b> +91 8778318394 | mail@tharunam2026@gmail.com
 </p>
 
 </div>
+</div>
+
+
+<!-- Full Screen Viewer -->
+
+<div id="imageViewer" class="image-viewer">
+
+<span class="close-viewer" onclick="closeViewer()">×</span>
+
+<img id="viewerImage">
+
+<button class="nav-btn prev" onclick="prevImage()">❮</button>
+<button class="nav-btn next" onclick="nextImage()">❯</button>
 
 </div>
 
+
 <script>
+
+let images=document.querySelectorAll('.gallery-item img');
+let currentIndex=0;
+
+images.forEach((img,index)=>{
+
+img.addEventListener("click",()=>{
+
+document.getElementById("imageViewer").style.display="flex";
+document.getElementById("viewerImage").src=img.src;
+currentIndex=index;
+
+});
+
+});
+
+function closeViewer(){
+document.getElementById("imageViewer").style.display="none";
+}
+
+function nextImage(){
+
+currentIndex++;
+
+if(currentIndex>=images.length){
+currentIndex=0;
+}
+
+document.getElementById("viewerImage").src=images[currentIndex].src;
+
+}
+
+function prevImage(){
+
+currentIndex--;
+
+if(currentIndex<0){
+currentIndex=images.length-1;
+}
+
+document.getElementById("viewerImage").src=images[currentIndex].src;
+
+}
+
+/* Keyboard navigation */
+
+document.addEventListener("keydown",function(e){
+
+if(document.getElementById("imageViewer").style.display==="flex"){
+
+if(e.key==="ArrowRight"){nextImage();}
+if(e.key==="ArrowLeft"){prevImage();}
+if(e.key==="Escape"){closeViewer();}
+
+}
+
+});
+
+/* Mobile Swipe */
+
+let startX=0;
+
+document.getElementById("imageViewer").addEventListener("touchstart",function(e){
+
+startX=e.touches[0].clientX;
+
+});
+
+document.getElementById("imageViewer").addEventListener("touchend",function(e){
+
+let endX=e.changedTouches[0].clientX;
+
+if(startX-endX>50){nextImage();}
+if(endX-startX>50){prevImage();}
+
+});
+
+/* Booking Modal */
 
 function openModal(){
 document.getElementById('bookingModal').style.display='block';
@@ -379,10 +521,13 @@ document.getElementById('bookingModal').style.display='none';
 }
 
 window.onclick=function(event){
+
 let modal=document.getElementById('bookingModal');
+
 if(event.target==modal){
 modal.style.display="none";
 }
+
 }
 
 </script>
