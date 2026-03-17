@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>Gold Puberty Ceremony - Tharunam</title>
+<title>Silver Puberty Ceremony - Tharunam</title>
 
 <style>
 
@@ -285,25 +284,25 @@ width:90%;
 <section class="hero-section">
 
 <div>
-<img src="pubertyimg/puberty gold.png" class="hero-img">
+<img src="pubertyimg/puberty silver.jpg" class="hero-img">
 </div>
 
 <div class="package-title">
 
-<h1>Puberty Ceremony - Gold</h1>
+<h1>Puberty Ceremony - Silver</h1>
 
-<p class="price-tag">₹45,000 Onwards</p>
+<p class="price-tag">₹1,50,000 Package</p>
 
 <p>
-Celebrate this grand milestone with unmatched elegance through our Gold Puberty Ceremony package. Designed to elevate the sacred Manjal Neerattu Vizha tradition, this experience blends rich cultural heritage with premium event arrangements. From majestic floral stage decor and live traditional music to cinematic photography and grand catering, every detail is crafted to create a spectacular celebration. Our team ensures the ceremony reflects dignity, joy, and unforgettable family memories.
+Our Silver Puberty Ceremony package is designed to celebrate the traditional Manjal Neerattu Vizha with elegance and comfort. This package includes beautifully arranged stage decor, professional makeup services, photography coverage, and delicious catering for guests. Every element is carefully planned to ensure the ceremony becomes a memorable celebration for family and loved ones.
 </p>
 
-<p>• Majestic Premium Floral Backdrop</p>
-<p>• Live Nathasvaram & Thavil Performance</p>
-<p>• Premium Bridal Makeup & Hairstyling</p>
-<p>• Cinematic Photography & Highlights</p>
-<p>• Grand Catering Service (200+ Guests)</p>
-<p>• Traditional Seeru Thattu Arrangements</p>
+<p>• Elegant Stage Decoration</p>
+<p>• Elegent Invitation Card</p>
+<p>• Professional Makeup Artist & Hairstyling</p>
+<p>• Professional Photography Coverage</p>
+<p>• Traditional South Indian Catering</p>
+<p>• Event Setup & Coordination</p>
 
 </div>
 
@@ -317,40 +316,46 @@ Celebrate this grand milestone with unmatched elegance through our Gold Puberty 
 
 <div class="gallery-scroll-container">
 
-<div class="gallery-item"><img src="pubertyimg/pg1.jpg"></div>
-<div class="gallery-item"><img src="pubertyimg/pg2.jpg"></div>
-<div class="gallery-item"><img src="pubertyimg/pg3.jpg"></div>
-<div class="gallery-item"><img src="pubertyimg/pg4.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/ps1.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/ps2.png"></div>
+<div class="gallery-item"><img src="pubertyimg/ps5.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/ps6.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/ps7.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/ps3.jpg"></div>
+<div class="gallery-item"><img src="pubertyimg/ps4.jpg"></div>
+<div class="gallery-item"><img src="party/invitation.jpg"></div>
+<div class="gallery-item"><img src="epimage/photographer.jpg"></div>
+
 
 </div>
 
 </div>
 
 <div class="section-box">
-<h2>Majestic Decor & Ambience</h2>
+<h2>Elegant Stage Decoration</h2>
 <p>
-A grand floral stage backdrop designed with premium flowers, decorative garlands, and traditional elements that create a majestic and festive ceremonial atmosphere.
+A beautifully designed ceremonial stage featuring decorative drapes, floral arrangements, and traditional design elements that create a warm and graceful atmosphere for the ceremony and family photographs.
 </p>
 </div>
 
 <div class="section-box">
-<h2>Traditional Music & Styling</h2>
+<h2>Professional Makeup Artist</h2>
 <p>
-Live Nathasvaram and Thavil performances enrich the sacred ambience while our professional makeup and styling team ensures the young lady looks radiant and elegant throughout the ceremony.
+Our experienced makeup artist provides elegant makeup and hairstyling for the young lady, ensuring a radiant and graceful appearance throughout the ceremony.
 </p>
 </div>
 
 <div class="section-box">
-<h2>Cinematic Photography</h2>
+<h2>Professional Photography</h2>
 <p>
-Our professional photography team captures every ritual, candid moment, and celebration through cinematic photography and highlight videos that preserve memories beautifully.
+A dedicated photographer captures all the important rituals, family portraits, and candid moments to preserve the memories of this special milestone.
 </p>
 </div>
 
 <div class="section-box">
-<h2>Grand Feast Experience</h2>
+<h2>Traditional Catering</h2>
 <p>
-Guests enjoy a grand traditional South Indian feast prepared with premium ingredients and authentic recipes, creating a delightful dining experience for everyone attending the celebration.
+Guests will enjoy a delicious South Indian feast prepared with quality ingredients, offering a satisfying and authentic dining experience for everyone attending the celebration.
 </p>
 </div>
 
@@ -367,13 +372,13 @@ Guests enjoy a grand traditional South Indian feast prepared with premium ingred
 <span class="close-btn" onclick="closeModal()">&times;</span>
 
 <h2 style="text-align:center;color:#8d0809;margin-bottom:20px;">
-Book Gold Puberty Package
+Book Silver Puberty Package
 </h2>
 
 <form action="https://formspree.io/f/maqpeyej" method="POST">
 
 <input type="hidden" name="event_type" value="Puberty">
-<input type="hidden" name="package_type" value="Gold">
+<input type="hidden" name="package_type" value="Silver">
 
 <div class="form-group">
 <label>Full Name *</label>
@@ -407,7 +412,7 @@ Book Gold Puberty Package
 </div>
 </div>
 
-<!-- FULL SCREEN IMAGE VIEWER -->
+<!-- IMAGE VIEWER -->
 
 <div id="imageViewer" class="image-viewer">
 
@@ -452,33 +457,6 @@ currentIndex--;
 if(currentIndex<0){currentIndex=images.length-1;}
 document.getElementById("viewerImage").src=images[currentIndex].src;
 }
-
-document.addEventListener("keydown",function(e){
-
-if(document.getElementById("imageViewer").style.display==="flex"){
-
-if(e.key==="ArrowRight"){nextImage();}
-if(e.key==="ArrowLeft"){prevImage();}
-if(e.key==="Escape"){closeViewer();}
-
-}
-
-});
-
-let startX=0;
-
-document.getElementById("imageViewer").addEventListener("touchstart",function(e){
-startX=e.touches[0].clientX;
-});
-
-document.getElementById("imageViewer").addEventListener("touchend",function(e){
-
-let endX=e.changedTouches[0].clientX;
-
-if(startX-endX>50){nextImage();}
-if(endX-startX>50){prevImage();}
-
-});
 
 function openModal(){
 document.getElementById("bookingModal").style.display="block";
